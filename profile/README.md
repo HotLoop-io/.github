@@ -58,7 +58,10 @@ The actual HotLoop code isn't in this org yet. It's coming. What you're looking 
 | [`HotLoop-io`](https://github.com/HotLoop-io/HotLoop-io) | The canonical license and the legal home |
 | [`docs`](https://github.com/HotLoop-io/docs) | Source for [docs.hotloop.io](https://docs.hotloop.io) |
 | [`HotLoop-io.github.io`](https://github.com/HotLoop-io/HotLoop-io.github.io) | Source for [hotloop.io](https://hotloop.io) |
-| [`.github`](https://github.com/HotLoop-io/.github) | Org wide community health files, this homepage, and [Discussions](https://github.com/orgs/HotLoop-io/discussions) |
+| [`.github`](https://github.com/HotLoop-io/.github) | Org wide community health files and this homepage |
+| [`Discussions`](https://github.com/HotLoop-io/Discussions) | The front door to [org wide Discussions](https://github.com/orgs/HotLoop-io/discussions) |
+
+Quick note on that last one, since it trips people up: Discussions itself is a GitHub feature that lives at the org level, not inside any one repo. The `Discussions` repo doesn't hold the conversations, it's just a signpost with a README explaining what goes there, so anyone landing on the repo list knows where to click.
 
 ## Talk to us
 
