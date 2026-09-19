@@ -21,7 +21,7 @@ Open an issue on the relevant repo using the templates provided. Include enough 
 
 ## License note
 
-HotLoop is free for individual and home use, and requires an Embernet Enterprise agreement for any business use. See the [HotLoop Community License](https://github.com/HotLoop-io/HotLoop-io/blob/main/LICENSE.md) for the full terms. Contributions are accepted under that same license.
+HotLoop Gateway is free for individual use and requires an Embernet Enterprise agreement for business use, under the [HotLoop Community License](https://github.com/HotLoop-io/HotLoop-io/blob/main/LICENSE.md). HotLoop Flow is licensed under [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) and is free for everyone, business use included. A contribution is accepted under the license of the repo it goes to.
 
 ## Code of Conduct
 
