@@ -30,7 +30,7 @@ HotLoop is two products, and they are licensed differently on purpose.
 | License | [HotLoop Community License](https://github.com/HotLoop-io/HotLoop-io/blob/main/LICENSE.md), source-available | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0), open source |
 | Individuals | Free | Free |
 | Businesses | Through Embernet | Free, no agreement needed |
-| Status | Not yet published. The code is moving into this org. | Version 0.1.0 is public today under its original name, Emberwire. The HotLoop Flow release is coming. |
+| Status | Not yet published. The code is moving into this org. | Version 0.1.0 was published as Emberwire. The code here is HotLoop Flow, and the first release under the new name is coming. |
 
 ## Who gets what for free
 
@@ -63,7 +63,7 @@ Building good software and running enterprise support contracts are two differen
 
 ## Where we are right now
 
-Neither product's code lives in this org yet. HotLoop Gateway is on its way here from a private repository, and HotLoop Flow is on its way from its original home, where it is called Emberwire and where version 0.1.0 is public under Apache-2.0. What you are looking at is the branding, the licensing, the docs, and the community setup, built properly before the code arrives instead of thrown together at the last minute. Follow [Discussions](https://github.com/orgs/HotLoop-io/discussions) if you want to know the moment it lands.
+HotLoop Flow's code is here now, at [HotLoop-io/hotloop-flow](https://github.com/HotLoop-io/hotloop-flow). Version 0.1.0 was published under its original name, Emberwire, and the first release under the new name has not been cut yet. HotLoop Gateway is still on its way from a private repository. Follow [Discussions](https://github.com/orgs/HotLoop-io/discussions) if you want to know the moment it lands.
 
 ## What lives in this org
 
