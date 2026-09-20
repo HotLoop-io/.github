@@ -6,7 +6,7 @@
 
 **Automation loops for the real world.**
 
-[Website](https://hotloop.io) &nbsp;·&nbsp; [Docs](https://docs.hotloop.io) &nbsp;·&nbsp; [Discussions](https://github.com/orgs/HotLoop-io/discussions) &nbsp;·&nbsp; [Licensing](https://docs.hotloop.io/licensing.html) &nbsp;·&nbsp; [Gateway for business, via Embernet](https://embernet.ai)
+[Website](https://hotloop.io) &nbsp;·&nbsp; [Docs](https://docs.hotloop.io) &nbsp;·&nbsp; [Discussions](https://github.com/orgs/HotLoop-io/discussions) &nbsp;·&nbsp; [Reddit](https://www.reddit.com/r/HotLoop/) &nbsp;·&nbsp; [Licensing](https://docs.hotloop.io/licensing/) &nbsp;·&nbsp; [Gateway for business, via Embernet](https://embernet.ai)
 
 </div>
 
@@ -30,7 +30,7 @@ HotLoop is two products, and they are licensed differently on purpose.
 | License | [HotLoop Community License](https://github.com/HotLoop-io/HotLoop-io/blob/main/LICENSE.md), source-available | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0), open source |
 | Individuals | Free | Free |
 | Businesses | Through Embernet | Free, no agreement needed |
-| Status | Not yet published. The code is moving into this org. | Version 0.1.0 was published as Emberwire. The code here is HotLoop Flow, and the first release under the new name is coming. |
+| Status | Not yet published. The code is moving into this org. | Version 2.0.0 is out, the first release under the HotLoop Flow name. It was Emberwire 0.1.0 before that. |
 
 ## Who gets what for free
 
@@ -63,7 +63,7 @@ Building good software and running enterprise support contracts are two differen
 
 ## Where we are right now
 
-HotLoop Flow's code is here now, at [HotLoop-io/hotloop-flow](https://github.com/HotLoop-io/hotloop-flow). Version 0.1.0 was published under its original name, Emberwire, and the first release under the new name has not been cut yet. HotLoop Gateway is still on its way from a private repository. Follow [Discussions](https://github.com/orgs/HotLoop-io/discussions) if you want to know the moment it lands.
+HotLoop Flow 2.0.0 is out, at [HotLoop-io/hotloop-flow](https://github.com/HotLoop-io/hotloop-flow). It is the first release under this name, and it was published as Emberwire 0.1.0 before that. HotLoop Gateway is still on its way from a private repository. Follow [Discussions](https://github.com/orgs/HotLoop-io/discussions) if you want to know the moment it lands.
 
 ## What lives in this org
 
@@ -79,7 +79,7 @@ Quick note on that last one, since it trips people up: Discussions itself is a G
 
 ## Talk to us
 
-- **Questions, ideas, or just want to talk shop:** [GitHub Discussions](https://github.com/orgs/HotLoop-io/discussions)
+- **Questions, ideas, or just want to talk shop:** [GitHub Discussions](https://github.com/orgs/HotLoop-io/discussions), or [r/HotLoop](https://www.reddit.com/r/HotLoop/) on Reddit
 - **Business use of HotLoop Gateway:** [embernet.ai](https://embernet.ai)
 - **Found a security problem:** read [SECURITY.md](./SECURITY.md) and email us privately, don't post it in public
 - **Anything else:** support@hotloop.io
