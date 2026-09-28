@@ -6,7 +6,7 @@
 
 **Automation loops for the real world.**
 
-[Website](https://hotloop.io) &nbsp;·&nbsp; [Docs](https://docs.hotloop.io) &nbsp;·&nbsp; [Discussions](https://github.com/orgs/HotLoop-io/discussions) &nbsp;·&nbsp; [Reddit](https://www.reddit.com/r/HotLoop/) &nbsp;·&nbsp; [Licensing](https://docs.hotloop.io/licensing/) &nbsp;·&nbsp; [Gateway for business, via Embernet](https://embernet.ai)
+[Website](https://hotloop.io) &nbsp;·&nbsp; [Docs](https://docs.hotloop.io) &nbsp;·&nbsp; [Discussions](https://github.com/orgs/HotLoop-io/discussions) &nbsp;·&nbsp; [Reddit](https://www.reddit.com/r/HotLoop/) &nbsp;·&nbsp; [Licensing](https://docs.hotloop.io/licensing/) &nbsp;·&nbsp; [Gateway for business, via EmberNET](https://embernet.ai)
 
 </div>
 
@@ -29,18 +29,18 @@ HotLoop is two products, and they are licensed differently on purpose.
 | What it is | An industrial automation gateway. It speaks seven protocols natively, keeps a history, raises alarms, and runs automations. | A flow engine in one static Go binary, compatible with Node-RED flow files. |
 | License | [HotLoop Community License](https://github.com/HotLoop-io/HotLoop-io/blob/main/LICENSE.md), source-available | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0), open source |
 | Individuals | Free | Free |
-| Businesses | Through Embernet | Free, no agreement needed |
+| Businesses | Free, through EmberNET | Free, no agreement needed |
 | Status | Not yet published. The code lives in this org now, at `HotLoop-io/hotloop`, private for the moment. 4.15.3 is merged and untagged. | Version 2.0.3 is out. 2.0.0 was the first release under the HotLoop Flow name, and it was Emberwire 0.1.0 before that. |
 
 ## Who gets what for free
 
 **Individual? It is free, whichever product you use.** Run it in your house, your garage, a class you teach, or a nonprofit you volunteer for, or just because you feel like tinkering. No trial, no countdown clock, no upgrade popup waiting for you six months in.
 
-**Running a business? That depends on the product.** HotLoop Flow is Apache-2.0, so a business can run it, modify it, and ship it commercially without asking anyone. HotLoop Gateway is different. Business use of the Gateway goes through our partner [Embernet](https://embernet.ai), and it does not matter whether the use is internal only, customer-facing, making you money, or saving you money. That is not us crippling the free version to squeeze you later. It is a real partnership, and it means a business gets support, accountability, and a vendor who picks up the phone, instead of a GitHub issue sitting untouched for six months.
+**Running a business? That depends on the product.** HotLoop Flow is Apache-2.0, so a business can run it, modify it, and ship it commercially without asking anyone. HotLoop Gateway is different. Business use of the Gateway goes through our partner [EmberNET](https://embernet.ai), and it does not matter whether the use is internal only, customer-facing, making you money, or saving you money. Signing up for EmberNET is free, and business use of HotLoop there is free. When a business wants support, SLAs, and a warranty, meaning a vendor who picks up the phone instead of a GitHub issue sitting untouched for six months, that comes from our official systems integrator, [Fireball Industries](https://fireballz.ai).
 
 A few concrete situations for HotLoop Gateway, because "business use" gets fuzzy fast once people start talking themselves into it:
 
-| Situation | Individual, free | Business, through Embernet |
+| Situation | Individual, free | Business, through EmberNET |
 |---|:---:|:---:|
 | Automating your own house | Yes | |
 | A hobby project you're building for fun | Yes | |
@@ -53,13 +53,13 @@ A few concrete situations for HotLoop Gateway, because "business use" gets fuzzy
 
 HotLoop Flow has no such table, because it has no such line. Apache-2.0 applies to everyone.
 
-Genuinely unsure which side of the Gateway line you are on? Ask before you build a whole setup on a bad assumption. Email support@hotloop.io, or go straight to Embernet if it looks like a business case.
+Genuinely unsure which side of the Gateway line you are on? Ask before you build a whole setup on a bad assumption. Email support@hotloop.io, or go straight to EmberNET if it looks like a business case.
 
 The full licenses are the actual legal documents, and they win every argument, including this one. The [HotLoop Community License](https://github.com/HotLoop-io/HotLoop-io/blob/main/LICENSE.md) covers the Gateway, and Flow is under [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0). Everything above is us explaining them like people instead of lawyers. The plain-language version also lives at [docs.hotloop.io/licensing.html](https://docs.hotloop.io/licensing.html).
 
-## Why a partner instead of charging for it ourselves
+## Why partners instead of charging for it ourselves
 
-Building good software and running enterprise support contracts are two different jobs, and pretending one team can do both well is how you end up mediocre at both. Embernet already handles the business side, which is support, SLAs, and procurement, all the things a real company needs before it will trust something in production. We handle the product. Splitting it this way means individuals keep a genuinely free, genuinely capable Gateway forever, and Flow stays open source, instead of everything being slowly steered toward a paid tier.
+Building good software and running enterprise support contracts are two different jobs, and pretending one team can do both well is how you end up mediocre at both. EmberNET is where business use of HotLoop happens, and Fireball Industries, our official systems integrator, handles support, SLAs, and warranties, all the things a real company needs before it will trust something in production. We handle the product. Splitting it this way means individuals keep a genuinely free, genuinely capable Gateway forever, and Flow stays open source, instead of everything being slowly steered toward a paid tier.
 
 ## Where we are right now
 

@@ -14,4 +14,4 @@ We'll acknowledge your report as soon as we can and keep you updated as we inves
 
 ## Scope
 
-This policy covers HotLoop's own repositories under the HotLoop-io org. Business/Enterprise deployments run through Embernet should also be reported to Embernet directly, in addition to us.
+This policy covers HotLoop's own repositories under the HotLoop-io org. Business/Enterprise deployments run through EmberNET should also be reported to EmberNET directly, in addition to us.
