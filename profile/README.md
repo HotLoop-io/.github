@@ -85,6 +85,7 @@ Quick note on that last one, since it trips people up: Discussions itself is a G
 
 - **Questions, ideas, or just want to talk shop:** [GitHub Discussions](https://github.com/orgs/HotLoop-io/discussions), or [r/HotLoop](https://www.reddit.com/r/HotLoop/) on Reddit
 - **Business use of HotLoop Gateway:** [embernet.ai](https://embernet.ai)
+- **Official Systems Integrators:** [Fireball Industries](https://fireballz.ai)
 - **Found a security problem:** read [SECURITY.md](./SECURITY.md) and email us privately, don't post it in public
 - **Anything else:** support@hotloop.io
 
