@@ -6,7 +6,7 @@
 
 **Automation loops for the real world.**
 
-[Website](https://hotloop.io) &nbsp;·&nbsp; [Docs](https://docs.hotloop.io) &nbsp;·&nbsp; [Discussions](https://github.com/orgs/HotLoop-io/discussions) &nbsp;·&nbsp; [Reddit](https://www.reddit.com/r/HotLoop/) &nbsp;·&nbsp; [Licensing](https://docs.hotloop.io/licensing/) &nbsp;·&nbsp; [Gateway for business, via EmberNET](https://embernet.ai)
+[Website](https://hotloop.io) &nbsp;·&nbsp; [Docs](https://docs.hotloop.io) &nbsp;·&nbsp; [Discussions](https://github.com/orgs/HotLoop-io/discussions) &nbsp;·&nbsp; [Reddit](https://www.reddit.com/r/HotLoop/) &nbsp;·&nbsp; [Licensing](https://docs.hotloop.io/licensing/) &nbsp;·&nbsp; [Business use, via EmberNET](https://embernet.ai)
 
 </div>
 
@@ -20,25 +20,28 @@ We got tired of that split, so we built HotLoop. It is automation software built
 
 The same software runs a single sensor in somebody's garage and a full floor of industrial gear. There is no dumbed-down home edition, and no bloated enterprise edition holding features hostage behind a paywall. Who you are decides how you get it, not what it can do.
 
-## Two products
+## The lineup, and Flow
 
-HotLoop is two products, and they are licensed differently on purpose.
+HotLoop is one codebase shipped as four products, each with its own image and its own chart, all released together from one tag with one version number. Every one of them speaks every protocol HotLoop has, MQTT included. What splits them is features.
 
-| | HotLoop Gateway | HotLoop Flow |
+| Product | What it is | Status |
 |---|---|---|
-| What it is | An industrial automation gateway. It speaks seven protocols natively, keeps a history, raises alarms, and runs automations. | A flow engine in one static Go binary, compatible with Node-RED flow files. |
-| License | [HotLoop Community License](https://github.com/HotLoop-io/HotLoop-io/blob/main/LICENSE.md), source-available | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0), open source |
-| Individuals | Free | Free |
-| Businesses | Free, through EmberNET | Free, no agreement needed |
-| Status | Not yet published. The code lives in this org now, at `HotLoop-io/hotloop`, private for the moment. 4.15.3 is merged and untagged. | Version 2.0.3 is out. 2.0.0 was the first release under the HotLoop Flow name, and it was Emberwire 0.1.0 before that. |
+| **HotLoop IoT** | Home Assistant, rewritten in Go for OT. Entities, automations, helpers, scripts, the logbook, dashboards, notifications, MCP, and MQTT with discovery for Shelly, ESPHome, Tasmota and Zigbee2MQTT, plus every industrial driver. SQLite or Postgres. | Upcoming release. It ships once MQTT discovery lands. |
+| **HotLoop Edge** | IoT plus the machine layer, Ignition Edge style: HMI, PLCs, CODESYS, Pi PLCs, store-and-forward, and an OPC UA server. SQLite, Postgres or TimescaleDB. | Upcoming release, alongside IoT. |
+| **HotLoop Gateway** | Everything, plus fleet, multi-site and scheduled reports. SQLite, Postgres or TimescaleDB. | **4.16.0 is out.** [Install it](https://docs.hotloop.io/gateway/install/). |
+| **HotLoop Edge Relay** | Headless. Polls, forwards over Sparkplug B, and buffers to disk when the link dies. No database. | **4.16.0 is out.** [Install it](https://docs.hotloop.io/edge-relay/install/). |
+
+All four are under the [HotLoop Community License](https://github.com/HotLoop-io/HotLoop-io/blob/main/LICENSE.md), source-available. No license keys, nothing unlocks at runtime, and no dates on IoT and Edge, because a date we miss is worse than none. [hotloop.io/products](https://hotloop.io/products/) has the side by side.
+
+**HotLoop Flow** is its own thing: a flow engine in one static Go binary, compatible with Node-RED flow files, under [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0). Version 2.0.3 is out. 2.0.0 was the first release under the HotLoop Flow name, and it was Emberwire 0.1.0 before that.
 
 ## Who gets what for free
 
-**Individual? It is free, whichever product you use.** Run it in your house, your garage, a class you teach, or a nonprofit you volunteer for, or just because you feel like tinkering. No trial, no countdown clock, no upgrade popup waiting for you six months in.
+**Individual? It is free, whichever one you use.** Run it in your house, your garage, a class you teach, or a nonprofit you volunteer for, or just because you feel like tinkering. No trial, no countdown clock, no upgrade popup waiting for you six months in.
 
-**Running a business? That depends on the product.** HotLoop Flow is Apache-2.0, so a business can run it, modify it, and ship it commercially without asking anyone. HotLoop Gateway is different. Business use of the Gateway goes through our partner [EmberNET](https://embernet.ai), and it does not matter whether the use is internal only, customer-facing, making you money, or saving you money. Signing up for EmberNET is free, and business use of HotLoop there is free. When a business wants support, SLAs, and a warranty, meaning a vendor who picks up the phone instead of a GitHub issue sitting untouched for six months, that comes from our official systems integrator, [Fireball Industries](https://fireballz.ai).
+**Running a business? That depends on the product.** HotLoop Flow is Apache-2.0, so a business can run it, modify it, and ship it commercially without asking anyone. The lineup is different. Business use of IoT, Edge, the Gateway or the Edge Relay goes through [EmberNET](https://embernet.ai), and it does not matter whether the use is internal only, customer-facing, making you money, or saving you money. Signing up for EmberNET is free, and business use of HotLoop there is free. When a business wants support, SLAs, and a warranty, meaning a vendor who picks up the phone instead of a GitHub issue sitting untouched for six months, that comes from our Official Systems Integrators, [Fireball Industries](https://fireballz.ai).
 
-A few concrete situations for HotLoop Gateway, because "business use" gets fuzzy fast once people start talking themselves into it:
+A few concrete situations for the lineup, because "business use" gets fuzzy fast once people start talking themselves into it:
 
 | Situation | Individual, free | Business, through EmberNET |
 |---|:---:|:---:|
@@ -53,27 +56,40 @@ A few concrete situations for HotLoop Gateway, because "business use" gets fuzzy
 
 HotLoop Flow has no such table, because it has no such line. Apache-2.0 applies to everyone.
 
-Genuinely unsure which side of the Gateway line you are on? Ask before you build a whole setup on a bad assumption. Email support@hotloop.io, or go straight to EmberNET if it looks like a business case.
+Genuinely unsure which side of the line you are on? Ask before you build a whole setup on a bad assumption. Email support@hotloop.io, or go straight to EmberNET if it looks like a business case.
 
-The full licenses are the actual legal documents, and they win every argument, including this one. The [HotLoop Community License](https://github.com/HotLoop-io/HotLoop-io/blob/main/LICENSE.md) covers the Gateway, and Flow is under [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0). Everything above is us explaining them like people instead of lawyers. The plain-language version also lives at [docs.hotloop.io/licensing.html](https://docs.hotloop.io/licensing.html).
+The full licenses are the actual legal documents, and they win every argument, including this one. The [HotLoop Community License](https://github.com/HotLoop-io/HotLoop-io/blob/main/LICENSE.md) covers the lineup, and Flow is under [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0). Everything above is us explaining them like people instead of lawyers. The plain-language version also lives at [docs.hotloop.io/licensing](https://docs.hotloop.io/licensing/).
 
 ## Why partners instead of charging for it ourselves
 
-Building good software and running enterprise support contracts are two different jobs, and pretending one team can do both well is how you end up mediocre at both. EmberNET is where business use of HotLoop happens, and Fireball Industries, our official systems integrator, handles support, SLAs, and warranties, all the things a real company needs before it will trust something in production. We handle the product. Splitting it this way means individuals keep a genuinely free, genuinely capable Gateway forever, and Flow stays open source, instead of everything being slowly steered toward a paid tier.
+Building good software and running enterprise support contracts are two different jobs, and pretending one team can do both well is how you end up mediocre at both. EmberNET is where business use of HotLoop happens, and Fireball Industries, our Official Systems Integrators, handle support, SLAs, and warranties, all the things a real company needs before it will trust something in production. We handle the product. Splitting it this way means individuals keep a genuinely free, genuinely capable lineup forever, and Flow stays open source, instead of everything being slowly steered toward a paid tier.
 
 ## Where we are right now
 
-HotLoop Flow 2.0.3 is out, at [HotLoop-io/hotloop-flow](https://github.com/HotLoop-io/hotloop-flow). 2.0.0 was the first release under this name, and before that it was published as Emberwire 0.1.0. HotLoop Gateway made the move too. The code is in this org at `HotLoop-io/hotloop`, and the repo is private for now. It's at 4.15.3 on paper, with everything since 4.3.1 merged and none of it tagged, and the [release notes](https://hotloop.io/releases/gateway/) say exactly that instead of pretending otherwise.
+**HotLoop Gateway 4.16.0 is out**, the first published release since 4.3.1, with everything from 4.4.0 to 4.15.3 in it at once. So is the Edge Relay, as its own image and chart, same version. Both pull with no login:
 
-What's landed lately: the OPC UA driver logs in to secured servers and is verified against Ignition 8.3.9, which promptly found us a bug. Device credentials are hidden from every role, for every protocol. There are scheduled reports, and paging over ntfy, Gotify and Discord, where the Acknowledge button on your phone acks the alarm right back into the Gateway. Discord hasn't been pointed at the real Discord yet, and the docs say so. And there are entities, which is the start of the real plan: everything Home Assistant does that a factory actually wants, rebuilt in Go for the plant floor. Follow [Discussions](https://github.com/orgs/HotLoop-io/discussions) if you want to know the moment it ships.
+```
+ghcr.io/hotloop-io/hotloop:4.16.0
+ghcr.io/hotloop-io/hotloop-edge-relay:4.16.0
+```
+
+The charts are `hotloop` and `hotloop-edge-relay` from `https://hotloop.io/hotloop`, and the Edge Relay has a Quadlet unit for a box outside a cluster. Coming from 4.3.1? It's not a plain `helm upgrade`, so read [the upgrade](https://docs.hotloop.io/gateway/upgrading/) before you touch a running plant. The code lives in this org at `HotLoop-io/hotloop`, and that repo is still private.
+
+What's in 4.16.0: entities, the start of the real plan, which is everything Home Assistant does that a factory actually wants, rebuilt in Go for the plant floor. Paging over ntfy, Gotify and Discord, where the Acknowledge button on your phone acks the alarm right back into the Gateway. Ignition 8.3.9 reading our OPC UA server, verified end to end. And a pile of fixes that matter on a running plant, like a silent Modbus device that took up to 15 minutes to go down and takes about 11 seconds now.
+
+Merged since, and landing in the next release: helpers, the logbook, and the automation language (condition, wait and stop steps, and `forSec` on a state trigger). Scripts are in review. Recipes and blueprints are next. A native UniFi integration, built in Go, is in development: Network first, then Protect, Access and PDUs.
+
+HotLoop Flow 2.0.3 is out, at [HotLoop-io/hotloop-flow](https://github.com/HotLoop-io/hotloop-flow).
+
+Follow [Discussions](https://github.com/orgs/HotLoop-io/discussions) if you want to know the moment IoT and Edge ship.
 
 ## What lives in this org
 
 | Repo | What it's for |
 |---|---|
-| `hotloop` | HotLoop Gateway and the Edge Relay. Private for now, so a link would just 404 on you |
+| `hotloop` | The lineup: IoT, Edge, Gateway and Edge Relay, one codebase. Private for now, so a link would just 404 on you |
 | [`hotloop-flow`](https://github.com/HotLoop-io/hotloop-flow) | HotLoop Flow |
-| [`HotLoop-io`](https://github.com/HotLoop-io/HotLoop-io) | The Gateway license, the brand standard, and the legal home |
+| [`HotLoop-io`](https://github.com/HotLoop-io/HotLoop-io) | The HotLoop Community License, the brand standard, and the legal home |
 | [`docs`](https://github.com/HotLoop-io/docs) | Source for [docs.hotloop.io](https://docs.hotloop.io) |
 | [`HotLoop-io.github.io`](https://github.com/HotLoop-io/HotLoop-io.github.io) | Source for [hotloop.io](https://hotloop.io) |
 | [`.github`](https://github.com/HotLoop-io/.github) | Org wide community health files and this homepage |
@@ -84,7 +100,7 @@ Quick note on that last one, since it trips people up: Discussions itself is a G
 ## Talk to us
 
 - **Questions, ideas, or just want to talk shop:** [GitHub Discussions](https://github.com/orgs/HotLoop-io/discussions), or [r/HotLoop](https://www.reddit.com/r/HotLoop/) on Reddit
-- **Business use of HotLoop Gateway:** [embernet.ai](https://embernet.ai)
+- **Business use of IoT, Edge, the Gateway or the Edge Relay:** [embernet.ai](https://embernet.ai)
 - **Official Systems Integrators:** [Fireball Industries](https://fireballz.ai)
 - **Found a security problem:** read [SECURITY.md](./SECURITY.md) and email us privately, don't post it in public
 - **Anything else:** support@hotloop.io
