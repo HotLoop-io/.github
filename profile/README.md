@@ -33,7 +33,7 @@ HotLoop is one codebase shipped as four products, each with its own image and it
 
 All four are under the [HotLoop Community License](https://github.com/HotLoop-io/HotLoop-io/blob/main/LICENSE.md), source-available. No license keys, nothing unlocks at runtime, and no dates on IoT and Edge, because a date we miss is worse than none. [hotloop.io/products](https://hotloop.io/products/) has the side by side.
 
-**HotLoop Flow** is its own thing: a flow engine in one static Go binary, compatible with Node-RED flow files, under [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0). Version 2.0.3 is out. 2.0.0 was the first release under the HotLoop Flow name, and it was Emberwire 0.1.0 before that.
+**HotLoop Flow** is its own thing: a flow engine in one static Go binary, compatible with Node-RED flow files, under [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0). Version 2.0.4 is out. 2.0.0 was the first release under the HotLoop Flow name, and it was Emberwire 0.1.0 before that.
 
 ## Who gets what for free
 
@@ -79,7 +79,7 @@ What's in 4.16.0: entities, the start of the real plan, which is everything Home
 
 Merged since, and landing in the next release: helpers, the logbook, the automation language (condition, wait and stop steps, and `forSec` on a state trigger), and scripts, so the CIP cycle gets written once and run from anywhere. Recipes and blueprints are next. A native UniFi integration, built in Go, is in development: Network first, then Protect, Access and PDUs.
 
-HotLoop Flow 2.0.3 is out, at [HotLoop-io/hotloop-flow](https://github.com/HotLoop-io/hotloop-flow).
+HotLoop Flow 2.0.4 is out, at [HotLoop-io/hotloop-flow](https://github.com/HotLoop-io/hotloop-flow).
 
 Follow [Discussions](https://github.com/orgs/HotLoop-io/discussions) if you want to know the moment IoT and Edge ship.
 
