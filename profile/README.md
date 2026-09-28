@@ -30,7 +30,7 @@ HotLoop is two products, and they are licensed differently on purpose.
 | License | [HotLoop Community License](https://github.com/HotLoop-io/HotLoop-io/blob/main/LICENSE.md), source-available | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0), open source |
 | Individuals | Free | Free |
 | Businesses | Through Embernet | Free, no agreement needed |
-| Status | Not yet published. The code is moving into this org. | Version 2.0.3 is out. 2.0.0 was the first release under the HotLoop Flow name, and it was Emberwire 0.1.0 before that. |
+| Status | Not yet published. The code lives in this org now, at `HotLoop-io/hotloop`, private for the moment. 4.15.3 is merged and untagged. | Version 2.0.3 is out. 2.0.0 was the first release under the HotLoop Flow name, and it was Emberwire 0.1.0 before that. |
 
 ## Who gets what for free
 
@@ -63,12 +63,16 @@ Building good software and running enterprise support contracts are two differen
 
 ## Where we are right now
 
-HotLoop Flow 2.0.3 is out, at [HotLoop-io/hotloop-flow](https://github.com/HotLoop-io/hotloop-flow). 2.0.0 was the first release under this name, and before that it was published as Emberwire 0.1.0. HotLoop Gateway is still on its way from a private repository. Follow [Discussions](https://github.com/orgs/HotLoop-io/discussions) if you want to know the moment it lands.
+HotLoop Flow 2.0.3 is out, at [HotLoop-io/hotloop-flow](https://github.com/HotLoop-io/hotloop-flow). 2.0.0 was the first release under this name, and before that it was published as Emberwire 0.1.0. HotLoop Gateway made the move too. The code is in this org at `HotLoop-io/hotloop`, and the repo is private for now. It's at 4.15.3 on paper, with everything since 4.3.1 merged and none of it tagged, and the [release notes](https://hotloop.io/releases/gateway/) say exactly that instead of pretending otherwise.
+
+What's landed lately: the OPC UA driver logs in to secured servers and is verified against Ignition 8.3.9, which promptly found us a bug. Device credentials are hidden from every role, for every protocol. There are scheduled reports, and paging over ntfy, Gotify and Discord, where the Acknowledge button on your phone acks the alarm right back into the Gateway. Discord hasn't been pointed at the real Discord yet, and the docs say so. And there are entities, which is the start of the real plan: everything Home Assistant does that a factory actually wants, rebuilt in Go for the plant floor. Follow [Discussions](https://github.com/orgs/HotLoop-io/discussions) if you want to know the moment it ships.
 
 ## What lives in this org
 
 | Repo | What it's for |
 |---|---|
+| `hotloop` | HotLoop Gateway and the Edge Relay. Private for now, so a link would just 404 on you |
+| [`hotloop-flow`](https://github.com/HotLoop-io/hotloop-flow) | HotLoop Flow |
 | [`HotLoop-io`](https://github.com/HotLoop-io/HotLoop-io) | The Gateway license, the brand standard, and the legal home |
 | [`docs`](https://github.com/HotLoop-io/docs) | Source for [docs.hotloop.io](https://docs.hotloop.io) |
 | [`HotLoop-io.github.io`](https://github.com/HotLoop-io/HotLoop-io.github.io) | Source for [hotloop.io](https://hotloop.io) |
@@ -86,7 +90,7 @@ Quick note on that last one, since it trips people up: Discussions itself is a G
 
 ## Contributing
 
-Once the product actually lands here, [CONTRIBUTING.md](./CONTRIBUTING.md) covers how to get a change in properly. Until then, the website and docs repos take pull requests right now, and if you've got a bug or an idea, Discussions is open today.
+[CONTRIBUTING.md](./CONTRIBUTING.md) covers how to get a change in properly. Flow, the website and the docs take pull requests right now. The Gateway's repo is private for now, so a bug or an idea for it goes in Discussions.
 
 ## Code of Conduct
 

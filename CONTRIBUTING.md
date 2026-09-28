@@ -4,7 +4,8 @@ Thanks for your interest in HotLoop. A few things to know before you dig in.
 
 ## Where things live
 
-- **Product source:** coming to this org soon. Watch [HotLoop-io](https://github.com/HotLoop-io) for it to land.
+- **HotLoop Flow:** [`hotloop-flow`](https://github.com/HotLoop-io/hotloop-flow)
+- **HotLoop Gateway:** `hotloop`, in this org and private for now. Until it opens up, bugs and ideas for the Gateway go in Discussions.
 - **Website:** [`HotLoop-io.github.io`](https://github.com/HotLoop-io/HotLoop-io.github.io)
 - **Docs:** [`docs`](https://github.com/HotLoop-io/docs)
 - **Community chatter, questions, and ideas:** [Discussions](https://github.com/orgs/HotLoop-io/discussions)
