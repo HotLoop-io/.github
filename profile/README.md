@@ -26,7 +26,7 @@ HotLoop is one codebase shipped as four products, each with its own image and it
 
 | Product | What it is | Status |
 |---|---|---|
-| **HotLoop IoT** | Home Assistant, rewritten in Go for OT. Entities, automations, helpers, scripts, the logbook, dashboards, notifications, MCP, and MQTT with discovery for Shelly, ESPHome, Tasmota and Zigbee2MQTT, plus every industrial driver. SQLite or Postgres. | Upcoming release. It ships once MQTT discovery lands. |
+| **HotLoop IoT** | The automation base, written in Go for OT. Entities, automations, helpers, scripts, the logbook, dashboards, notifications, MCP, and MQTT with discovery for Shelly, ESPHome, Tasmota and Zigbee2MQTT, plus every industrial driver. SQLite or Postgres. | Upcoming release. It ships once MQTT discovery lands. |
 | **HotLoop Edge** | IoT plus the machine layer, Ignition Edge style: HMI, PLCs, CODESYS, Pi PLCs, store-and-forward, and an OPC UA server. SQLite, Postgres or TimescaleDB. | Upcoming release, alongside IoT. |
 | **HotLoop Gateway** | Everything, plus fleet, multi-site and scheduled reports. SQLite, Postgres or TimescaleDB. | **4.16.0 is out.** [Install it](https://docs.hotloop.io/gateway/install/). |
 | **HotLoop Edge Relay** | Headless. Polls, forwards over Sparkplug B, and buffers to disk when the link dies. No database. | **4.16.0 is out.** [Install it](https://docs.hotloop.io/edge-relay/install/). |
@@ -75,7 +75,7 @@ ghcr.io/hotloop-io/hotloop-edge-relay:4.16.0
 
 The charts are `hotloop` and `hotloop-edge-relay` from `https://hotloop.io/hotloop`, and the Edge Relay has a Quadlet unit for a box outside a cluster. Coming from 4.3.1? It's not a plain `helm upgrade`, so read [the upgrade](https://docs.hotloop.io/gateway/upgrading/) before you touch a running plant. The code lives in this org at `HotLoop-io/hotloop`, and that repo is still private.
 
-What's in 4.16.0: entities, the start of the real plan, which is everything Home Assistant does that a factory actually wants, rebuilt in Go for the plant floor. Paging over ntfy, Gotify and Discord, where the Acknowledge button on your phone acks the alarm right back into the Gateway. Ignition 8.3.9 reading our OPC UA server, verified end to end. And a pile of fixes that matter on a running plant, like a silent Modbus device that took up to 15 minutes to go down and takes about 11 seconds now.
+What's in 4.16.0: entities, the foundation every automation, helper, script and screen we build from here stands on. Paging over ntfy, Gotify and Discord, where the Acknowledge button on your phone acks the alarm right back into the Gateway. Ignition 8.3.9 reading our OPC UA server, verified end to end. And a pile of fixes that matter on a running plant, like a silent Modbus device that took up to 15 minutes to go down and takes about 11 seconds now.
 
 Merged since, and landing in the next release: helpers, the logbook, the automation language (condition, wait and stop steps, and `forSec` on a state trigger), and scripts, so the CIP cycle gets written once and run from anywhere. Recipes and blueprints are next. A native UniFi integration, built in Go, is in development: Network first, then Protect, Access and PDUs.
 
