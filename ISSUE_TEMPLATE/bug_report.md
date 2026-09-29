@@ -17,7 +17,7 @@ What you expected to happen instead.
 **Environment**
 - HotLoop version:
 - OS / hardware:
-- Individual (home) or Business (EmberNET) deployment:
+- Individual (home) or business deployment:
 
 **Logs / screenshots**
 If applicable.

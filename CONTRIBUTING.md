@@ -22,7 +22,7 @@ Open an issue on the relevant repo using the templates provided. Include enough 
 
 ## License note
 
-HotLoop Gateway is free for individual use and requires an EmberNET Enterprise agreement for business use, under the [HotLoop Community License](https://github.com/HotLoop-io/HotLoop-io/blob/main/LICENSE.md). HotLoop Flow is licensed under [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) and is free for everyone, business use included. A contribution is accepted under the license of the repo it goes to.
+HotLoop IoT, Edge, the Gateway and the Edge Relay are under the [HotLoop Community License](https://github.com/HotLoop-io/HotLoop-io/blob/main/LICENSE.md). They're free for individual use, and business use is free too, through [EmberNET](https://embernet.ai), where businesses sign up for free. Support, SLAs and warranties come from our Official Systems Integrators, [Fireball Industries](https://fireballz.ai). HotLoop Flow is licensed under [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) and is free for everyone, business use included, with no EmberNET sign-up needed. A contribution is accepted under the license of the repo it goes to.
 
 ## Code of Conduct
 

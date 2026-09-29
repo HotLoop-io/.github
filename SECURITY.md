@@ -14,4 +14,4 @@ We'll acknowledge your report as soon as we can and keep you updated as we inves
 
 ## Scope
 
-This policy covers HotLoop's own repositories under the HotLoop-io org. Business/Enterprise deployments run through EmberNET should also be reported to EmberNET directly, in addition to us.
+This policy covers HotLoop's own repositories under the HotLoop-io org. If a business deployment is supported by our Official Systems Integrators, [Fireball Industries](https://fireballz.ai), tell them too, in addition to us. We fix the code, and they're the ones on the hook for your SLA.
