@@ -35,7 +35,7 @@ One codebase, shipped as four products, each with its own image and chart, all r
 
 All four are under the [HotLoop Community License](https://github.com/HotLoop-io/HotLoop-io/blob/main/LICENSE.md), source-available. No license keys, nothing unlocks at runtime, and no dates on IoT and Edge, because a date we miss is worse than none. [hotloop.io/products](https://hotloop.io/products/) has them side by side.
 
-**HotLoop Flow** is its own thing: Node-RED's idea on a runtime that doesn't fall over. One static Go binary, reads your `flows.json` as is, every inbox bounded so one chatty sensor can't OOM-kill the pod, and it won't start without a login. Apache-2.0. Version 2.0.4 is out, at [HotLoop-io/hotloop-flow](https://github.com/HotLoop-io/hotloop-flow). It was Emberwire 0.1.0 before it got the name.
+**HotLoop Flow** is its own thing: Node-RED's idea on a runtime that doesn't fall over. One static Go binary, reads your `flows.json` as is, every inbox bounded so one chatty sensor can't OOM-kill the pod, and it won't start without a login. Apache-2.0. Version 2.0.5 is out, at [HotLoop-io/hotloop-flow](https://github.com/HotLoop-io/hotloop-flow). It was Emberwire 0.1.0 before it got the name.
 
 ## Who gets what for free
 
@@ -89,7 +89,7 @@ Merged since, and landing in the next release:
 - **Helpers, the logbook, and a real automation language**, so "the pump has been on for five minutes" is one trigger instead of a timer hack.
 - **UniFi, read-only.** Switches, ports, PoE and WAN as tags, so a quiet PLC tells you which port it's on. Its very first real read found our own 5G backup link had been dead for two days while the console still called it up.
 
-HotLoop Flow 2.0.4 is out, at [HotLoop-io/hotloop-flow](https://github.com/HotLoop-io/hotloop-flow).
+HotLoop Flow 2.0.5 is out, at [HotLoop-io/hotloop-flow](https://github.com/HotLoop-io/hotloop-flow). `HOTLOOP_FLOW_INSECURE=true` finally does what it says, after quietly doing nothing since 0.1.0, and turning on discovery stopped handing the pod raw network privileges it never used.
 
 Follow [Discussions](https://github.com/orgs/HotLoop-io/discussions) if you want to know the second IoT and Edge ship.
 
