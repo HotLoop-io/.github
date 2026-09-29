@@ -87,7 +87,7 @@ Merged since, and landing in the next release:
 - **Scripts.** Write the CIP cycle once, run it from a screen, a rule, MCP or its own entity.
 - **Blueprints.** Write a rule once with blanks and fill it in per pump. Editing the blueprint on Wednesday doesn't quietly change the rule that was right on Tuesday.
 - **Helpers, the logbook, and a real automation language**, so "the pump has been on for five minutes" is one trigger instead of a timer hack.
-- **UniFi, read-only.** Switches, ports, PoE and WAN as tags, so a quiet PLC tells you which port it's on. Its very first real read found our own 5G backup link had been dead for two days while the console still called it up.
+- **UniFi, read-only.** Switches, ports, PoE and WAN as tags, so a quiet PLC tells you which port it's on. Its very first real read called our own 5G backup up. It had been dead for two days, and the console's WAN block still said up, which is what HotLoop trusted. The console's health checks knew, so that's what it reads now, and a dead backup reads dead.
 
 HotLoop Flow 2.0.5 is out, at [HotLoop-io/hotloop-flow](https://github.com/HotLoop-io/hotloop-flow). `HOTLOOP_FLOW_INSECURE=true` finally does what it says, after quietly doing nothing since 0.1.0, and turning on discovery stopped handing the pod raw network privileges it never used.
 
