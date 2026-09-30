@@ -30,8 +30,8 @@ One codebase, shipped as four products, each with its own image and chart, all r
 |---|---|---|
 | **HotLoop IoT** | The automation base, written in Go for OT. Entities, automations, helpers, scripts, the logbook, dashboards, notifications, MCP, and MQTT with discovery for Shelly, ESPHome, Tasmota and Zigbee2MQTT, plus every industrial driver. SQLite or Postgres. | Upcoming. It ships when MQTT discovery works, because an automation base that can't find a smart plug on its own network is a joke. |
 | **HotLoop Edge** | IoT plus the machine layer, Ignition Edge style: HMI, PLCs, CODESYS, Pi PLCs, store-and-forward, and an OPC UA server. SQLite, Postgres or TimescaleDB. | Upcoming, alongside IoT. |
-| **HotLoop Gateway** | Everything, plus fleet, multi-site and scheduled reports. The site brain. | **4.16.0 is out.** [Install it](https://docs.hotloop.io/gateway/install/). |
-| **HotLoop Edge Relay** | Headless. Polls, forwards over Sparkplug B, buffers to disk when the link dies. No database, no UI, nothing to click wrong. | **4.16.0 is out.** [Install it](https://docs.hotloop.io/edge-relay/install/). |
+| **HotLoop Gateway** | Everything, plus fleet, multi-site and scheduled reports. The site brain. | **4.17.0 is out.** [Install it](https://docs.hotloop.io/gateway/install/). |
+| **HotLoop Edge Relay** | Headless. Polls, forwards over Sparkplug B, buffers to disk when the link dies. No database, no UI, nothing to click wrong. | **4.17.0 is out.** [Install it](https://docs.hotloop.io/edge-relay/install/). |
 
 All four are under the [HotLoop Community License](https://github.com/HotLoop-io/HotLoop-io/blob/main/LICENSE.md), source-available. No license keys, nothing unlocks at runtime, and no dates on IoT and Edge, because a date we miss is worse than none. [hotloop.io/products](https://hotloop.io/products/) has them side by side.
 
@@ -70,24 +70,25 @@ What that buys you: the lineup stays genuinely free and genuinely capable for in
 
 ## Where we are right now
 
-**HotLoop Gateway 4.16.0 is out.** It's the first published release since 4.3.1, and it carries everything from 4.4.0 to 4.15.3 in one go. The Edge Relay ships beside it as its own image and chart, same version, and both pull with no login:
+**HotLoop Gateway 4.17.0 is out.** The Edge Relay ships beside it as its own image and chart, same version, and both pull with no login:
 
 ```
-ghcr.io/hotloop-io/hotloop:4.16.0
-ghcr.io/hotloop-io/hotloop-edge-relay:4.16.0
+ghcr.io/hotloop-io/hotloop:4.17.0
+ghcr.io/hotloop-io/hotloop-edge-relay:4.17.0
 ```
 
-The charts are `hotloop` and `hotloop-edge-relay` from `https://hotloop.io/hotloop`, and the Edge Relay has a Quadlet unit for a box outside a cluster. On 4.3.1? Don't just `helm upgrade`. The chart changed its name and Kubernetes won't rename a selector in place, so read [the upgrade](https://docs.hotloop.io/gateway/upgrading/) first or you'll be reading it at 2am anyway. The code lives in this org at `HotLoop-io/hotloop`, and that repo is private for now.
+The charts are `hotloop` and `hotloop-edge-relay` from `https://hotloop.io/hotloop`, and the Edge Relay has a Quadlet unit for a box outside a cluster. On 4.16.0 it's a plain `helm upgrade`, with two catches: use `--reset-then-reuse-values`, not `--reuse-values`, and back up the new `<release>-secret-key` Secret, because the first start encrypts every stored device password with it and from then on that key is part of your data. On 4.3.1 it's not a plain upgrade at all. Either way, read [the upgrade](https://docs.hotloop.io/gateway/upgrading/) first or you'll be reading it at 2am anyway. The code lives in this org at `HotLoop-io/hotloop`, and that repo is private for now.
 
-What 4.16.0 gets you: entities, so the plant has names instead of register addresses and everything built from here stands on them. Paging over ntfy, Gotify and Discord, where pressing Acknowledge on your phone acks the alarm in the Gateway. Ignition 8.3.9 reading our OPC UA server end to end, which found two bugs on the way, both fixed. And fixes that matter on a running plant, like a Modbus device with a pulled cable going down in about 11 seconds instead of up to 15 minutes.
-
-Merged since, and landing in the next release:
+What 4.17.0 gets you:
 
 - **Recipes.** Grade A's setpoints off the laminated sheet and into the plant in one go, checked whole, refused whole, and read back from the device. Nobody fat-fingers the changeover at 2am again.
 - **Scripts.** Write the CIP cycle once, run it from a screen, a rule, MCP or its own entity.
 - **Blueprints.** Write a rule once with blanks and fill it in per pump. Editing the blueprint on Wednesday doesn't quietly change the rule that was right on Tuesday.
 - **Helpers, the logbook, and a real automation language**, so "the pump has been on for five minutes" is one trigger instead of a timer hack.
-- **UniFi, read-only.** Switches, ports, PoE and WAN as tags, so a quiet PLC tells you which port it's on. Its very first real read called our own 5G backup up. It had been dead for two days, and the console's WAN block still said up, which is what HotLoop trusted. The console's health checks knew, so that's what it reads now, and a dead backup reads dead.
+- **UniFi, read-only.** Switches, ports, PoE, WAN and clients as tags, so a quiet PLC tells you which port it's on. Its very first real read called our own 5G backup up. It had been dead for two days, and the console's WAN block still said up, which is what HotLoop trusted. The console's health checks knew, so that's what it reads now, and a dead backup reads dead.
+- **Device passwords encrypted at rest**, with a key that never sits in the database or a backup.
+
+That sits on 4.16.0's foundation: entities, so the plant has names instead of register addresses, paging over ntfy, Gotify and Discord with an Acknowledge button that actually acks, and Ignition 8.3.9 reading our OPC UA server end to end.
 
 HotLoop Flow 2.0.5 is out, at [HotLoop-io/hotloop-flow](https://github.com/HotLoop-io/hotloop-flow). `HOTLOOP_FLOW_INSECURE=true` finally does what it says, after quietly doing nothing since 0.1.0, and turning on discovery stopped handing the pod raw network privileges it never used.
 
