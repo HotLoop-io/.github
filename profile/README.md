@@ -6,7 +6,7 @@
 
 **Automation loops for the real world.**
 
-[Website](https://hotloop.io) &nbsp;·&nbsp; [Docs](https://docs.hotloop.io) &nbsp;·&nbsp; [Discussions](https://github.com/orgs/HotLoop-io/discussions) &nbsp;·&nbsp; [Reddit](https://www.reddit.com/r/HotLoop/) &nbsp;·&nbsp; [Licensing](https://docs.hotloop.io/licensing/) &nbsp;·&nbsp; [Business use, via EmberNET](https://embernet.ai)
+[Website](https://hotloop.io) &nbsp;·&nbsp; [Docs](https://docs.hotloop.io) &nbsp;·&nbsp; [Discussions](https://github.com/orgs/HotLoop-io/discussions) &nbsp;·&nbsp; [Reddit](https://www.reddit.com/r/HotLoop/) &nbsp;·&nbsp; [License](https://hotloop.io/license/) &nbsp;·&nbsp; [Business use, via EmberNET](https://embernet.ai)
 
 </div>
 
@@ -22,51 +22,51 @@ Two things make it worth trusting. It won't lie to you: a sensor it can't read s
 
 There's no dumbed-down home edition and no enterprise edition holding features hostage. The garage and the plant floor run the same code. Who you are decides how you get it, not what it can do.
 
-## The lineup, and Flow
+## The lineup, Flow and Cascade
 
-One codebase, shipped as four products, each with its own image and chart, all released together from one tag. Every one of them speaks every protocol HotLoop has, MQTT included. Features split them, protocols don't, so nobody ever has to run the big one just to reach the PLC on their bench.
+One codebase, shipped as four products, each with its own image and chart, all released together from one tag. Every one of them speaks every protocol HotLoop has, MQTT included. Features split them, protocols don't, so nobody ever has to run the big one just to reach the PLC on their bench. Flow and Cascade are their own products beside them.
 
 | Product | What it is | Status |
 |---|---|---|
-| **HotLoop IoT** | The automation base, written in Go for OT. Entities, automations, helpers, scripts, the logbook, dashboards, notifications, MCP, and MQTT with discovery for Shelly, ESPHome, Tasmota and Zigbee2MQTT, plus every industrial driver. SQLite or Postgres. | Upcoming. It ships when MQTT discovery works, because an automation base that can't find a smart plug on its own network is a joke. |
-| **HotLoop Edge** | IoT plus the machine layer, Ignition Edge style: HMI, PLCs, CODESYS, Pi PLCs, store-and-forward, and an OPC UA server. SQLite, Postgres or TimescaleDB. | Upcoming, alongside IoT. |
+| **HotLoop IoT** | The automation base, written in Go for OT. Entities, automations, helpers, scripts, the logbook, dashboards, notifications, MCP, and MQTT with discovery for Shelly, ESPHome, Tasmota and Zigbee2MQTT, plus every industrial driver. SQLite or Postgres. | Built and merged. 4.18.4 is the release that publishes it, so there is nothing to pull yet. |
+| **HotLoop Edge** | IoT plus the machine layer, Ignition Edge style: HMI, PLCs, CODESYS, Pi PLCs, store-and-forward, and an OPC UA server. SQLite, Postgres or TimescaleDB. | Built and merged, published alongside IoT in 4.18.4. Nothing to pull yet. |
 | **HotLoop Gateway** | Everything, plus fleet, multi-site and scheduled reports. The site brain. | **4.17.0 is out.** [Install it](https://docs.hotloop.io/gateway/install/). |
 | **HotLoop Edge Relay** | Headless. Polls, forwards over Sparkplug B, buffers to disk when the link dies. No database, no UI, nothing to click wrong. | **4.17.0 is out.** [Install it](https://docs.hotloop.io/edge-relay/install/). |
+| **HotLoop Flow** | Node-RED's idea on a runtime that doesn't fall over. One static Go binary, reads your `flows.json` as is, every inbox bounded so one chatty sensor can't OOM-kill the pod, and it won't start without a login. It was Emberwire 0.1.0 before it got the name. | **2.1.0 is out**, at [HotLoop-io/hotloop-flow](https://github.com/HotLoop-io/hotloop-flow). [Install it](https://docs.hotloop.io/flow/install/). |
+| **HotLoop Cascade** | The plant talking to everything else. An alarm, a webhook, a schedule or an MQTT burst becomes a batch of items that run through checkpointed steps against real systems, so a dead API or a rebooted box doesn't lose the job. One static Go binary, SQLite or Postgres. | **0.1.1 is out**, the first release. The repo and registry are private, so a pull needs a login. [Docs](https://docs.hotloop.io/cascade/overview/). |
 
-All four are under the [HotLoop Community License](https://github.com/HotLoop-io/HotLoop-io/blob/main/LICENSE.md), source-available. No license keys, nothing unlocks at runtime, and no dates on IoT and Edge, because a date we miss is worse than none. [hotloop.io/products](https://hotloop.io/products/) has them side by side.
-
-**HotLoop Flow** is its own thing: Node-RED's idea on a runtime that doesn't fall over. One static Go binary, reads your `flows.json` as is, every inbox bounded so one chatty sensor can't OOM-kill the pod, and it won't start without a login. Apache-2.0. Version 2.0.5 is out, at [HotLoop-io/hotloop-flow](https://github.com/HotLoop-io/hotloop-flow). It was Emberwire 0.1.0 before it got the name.
+All six are under the [HotLoop Business Source License 1.1](https://hotloop.io/license/). It is source-available, not open source, and I'm not going to dress it up as anything else. No license keys, nothing unlocks at runtime, and no date on a release that hasn't shipped, because a date we miss is worse than none. [hotloop.io/products](https://hotloop.io/products/) has them side by side.
 
 ## Who gets what for free
 
-**Individual? It's free, whichever one you use.** Your house, your garage, a class you teach, a nonprofit you volunteer for, or because you felt like tinkering at 1am. No trial, no countdown, no upgrade popup six months in.
+**Home or lab? It's free, whichever one you use.** Your house, your garage, a bench, a class you teach, or because you felt like tinkering at 1am. No trial, no countdown, no upgrade popup six months in. Schools, nonprofits and government bodies are free too, for their own operations and mission, with no sign-up.
 
-**Running a business? That depends on the product.** Flow is Apache-2.0: run it, change it, sell it, nobody to ask. The lineup is different. Business use of IoT, Edge, the Gateway or the Edge Relay goes through [EmberNET](https://embernet.ai), whether it's internal only, customer-facing, making you money or saving you money. Signing up for EmberNET is free, and business use of HotLoop there is free. If you want support, SLAs and a warranty, meaning a vendor who picks up the phone instead of a GitHub issue rotting for six months, that's our Official Systems Integrators, [Fireball Industries](https://fireballz.ai).
+**Running a business? That goes through [EmberNET](https://embernet.ai).** Internal only, customer-facing, making you money or saving you money, it's business use all the same. Signing up for EmberNET is free, and business use of HotLoop there is free. If you want support, SLAs and a warranty, meaning a vendor who picks up the phone instead of a GitHub issue rotting for six months, that's our Official Systems Integrator, [Fireball Industries](https://fireballz.ai).
 
-"Business use" gets fuzzy real fast once somebody starts talking themselves into it, so here's where the line sits for the lineup:
+"Business use" gets fuzzy real fast once somebody starts talking themselves into it, so here's where the line sits:
 
-| Situation | Individual, free | Business, through EmberNET |
+| Situation | Free | Business, through EmberNET |
 |---|:---:|:---:|
 | Automating your own house | Yes | |
 | A hobby project you're building for fun | Yes | |
 | A class project or a student lab | Yes | |
-| A local nonprofit running it in their own space | Yes | |
+| A school, a nonprofit or a government body, for its own mission | Yes | |
 | Running it inside a company, internal only, no customers touching it | | Yes |
 | Deploying it as part of a product or service you sell | | Yes |
 | A landlord automating a rental property they operate as a business | | Yes |
 | A contractor installing and managing it for paying clients | | Yes |
 
-Flow has no table like that, because it has no line like that. Apache-2.0 applies to everyone.
+What the license does not grant: hosting it as a service for other people, reselling it, and embedding it in something you sell. Each version also turns into GPL-3.0 or later four years after it is first made public, so nothing here stays locked forever.
 
 Not sure which side you're on? Ask before you build a whole setup on a bad guess. Email support@hotloop.io, or go straight to EmberNET if it smells like a business case. The answer costs you nothing.
 
-The licenses themselves are the legal documents, and they win every argument, including this one. The [HotLoop Community License](https://github.com/HotLoop-io/HotLoop-io/blob/main/LICENSE.md) covers the lineup and Flow is under [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0). Everything above is us explaining them like people instead of lawyers. The plain-language version also lives at [docs.hotloop.io/licensing](https://docs.hotloop.io/licensing/).
+The [license](https://hotloop.io/license/) is the legal document, and it wins every argument, including this one. The [terms](https://hotloop.io/terms/) cover the rest. Everything above is us explaining them like people instead of lawyers.
 
 ## Why partners, instead of charging for it ourselves
 
 Building good software and running enterprise support contracts are two different jobs, and a team that pretends to do both ends up mediocre at both. EmberNET is where business use of HotLoop happens. Fireball Industries handles support, SLAs and warranties, the stuff a real company needs before it trusts anything in production. We build the product.
 
-What that buys you: the lineup stays genuinely free and genuinely capable for individuals, and Flow stays open source, instead of everything getting slowly steered toward a paid tier. There's no paid tier to steer toward.
+What that buys you: HotLoop stays genuinely free and genuinely capable for homes, labs, schools, nonprofits and government, instead of everything getting slowly steered toward a paid tier. There's no paid tier to steer toward.
 
 ## Where we are right now
 
@@ -90,17 +90,20 @@ What 4.17.0 gets you:
 
 That sits on 4.16.0's foundation: entities, so the plant has names instead of register addresses, paging over ntfy, Gotify and Discord with an Acknowledge button that actually acks, and Ignition 8.3.9 reading our OPC UA server end to end.
 
-HotLoop Flow 2.0.5 is out, at [HotLoop-io/hotloop-flow](https://github.com/HotLoop-io/hotloop-flow). `HOTLOOP_FLOW_INSECURE=true` finally does what it says, after quietly doing nothing since 0.1.0, and turning on discovery stopped handing the pod raw network privileges it never used.
+**HotLoop Flow 2.1.0 is out**, at [HotLoop-io/hotloop-flow](https://github.com/HotLoop-io/hotloop-flow). Every deploy is now a record you can diff, test and put back, and a save restarts only the nodes you changed, so an MQTT session on everything else keeps running. Flows get tests that run on the real runtime, and a deploy that fails them can be refused. [The release notes](https://hotloop.io/releases/flow/) have the rest.
 
-Follow [Discussions](https://github.com/orgs/HotLoop-io/discussions) if you want to know the second IoT and Edge ship.
+**HotLoop Cascade 0.1.1 is out**, and it's the first Cascade release. There was a 0.1.0 tag that never published anything, because its chart test failed on a hosted runner. 0.1.1 is the same code with the test fixed. Every step is checkpointed, so a `kill -9` in the middle of a run picks up where it left off. The repo and the registry are private, so a pull needs a `podman login ghcr.io` first. [The release notes](https://hotloop.io/releases/cascade/) have the commands.
+
+IoT and Edge are built and merged, and 4.18.4 is the release that publishes them. Follow [Discussions](https://github.com/orgs/HotLoop-io/discussions) if you want to know the second they ship.
 
 ## What lives in this org
 
 | Repo | What it's for |
 |---|---|
 | `hotloop` | The lineup: IoT, Edge, Gateway and Edge Relay, one codebase. Private for now, so a link would just 404 on you |
+| `hotloop-cascade` | HotLoop Cascade. Private for now, so a link would just 404 on you |
 | [`hotloop-flow`](https://github.com/HotLoop-io/hotloop-flow) | HotLoop Flow |
-| [`HotLoop-io`](https://github.com/HotLoop-io/HotLoop-io) | The HotLoop Community License, the brand standard, and the legal home |
+| [`HotLoop-io`](https://github.com/HotLoop-io/HotLoop-io) | The HotLoop Business Source License, the brand standard, and the legal home |
 | [`docs`](https://github.com/HotLoop-io/docs) | Source for [docs.hotloop.io](https://docs.hotloop.io) |
 | [`HotLoop-io.github.io`](https://github.com/HotLoop-io/HotLoop-io.github.io) | Source for [hotloop.io](https://hotloop.io) |
 | [`.github`](https://github.com/HotLoop-io/.github) | Org wide community health files and this homepage |
@@ -111,14 +114,14 @@ That last one trips people up, so: Discussions is a GitHub feature that lives at
 ## Talk to us
 
 - **Questions, ideas, or just want to talk shop:** [GitHub Discussions](https://github.com/orgs/HotLoop-io/discussions), or [r/HotLoop](https://www.reddit.com/r/HotLoop/) on Reddit
-- **Business use of IoT, Edge, the Gateway or the Edge Relay:** [embernet.ai](https://embernet.ai)
-- **Official Systems Integrators:** [Fireball Industries](https://fireballz.ai)
+- **Business use of any HotLoop product:** [embernet.ai](https://embernet.ai)
+- **Official Systems Integrator:** [Fireball Industries](https://fireballz.ai)
 - **Found a security problem:** read [SECURITY.md](./SECURITY.md) and email us privately. Don't post it in public, because the first person to read it might not be us
 - **Anything else:** support@hotloop.io
 
 ## Contributing
 
-[CONTRIBUTING.md](./CONTRIBUTING.md) covers how to get a change in properly. Flow, the website and the docs take pull requests right now. The lineup's repo is private for now, so a bug or an idea for it goes in Discussions, where we'll actually see it.
+[CONTRIBUTING.md](./CONTRIBUTING.md) covers how to get a change in properly. Flow, the website and the docs take pull requests right now. The lineup's repo and Cascade's are private for now, so a bug or an idea for either goes in Discussions, where we'll actually see it.
 
 ## Code of Conduct
 
