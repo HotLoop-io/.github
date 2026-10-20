@@ -28,8 +28,8 @@ One codebase, shipped as four products, each with its own image and chart, all r
 
 | Product | What it is | Status |
 |---|---|---|
-| **HotLoop IoT** | The automation base, written in Go for OT. Entities, automations, helpers, scripts, the logbook, dashboards, notifications, MCP, and MQTT with discovery for Shelly, ESPHome, Tasmota and Zigbee2MQTT, plus every industrial driver. SQLite or Postgres. | Built and merged. 4.18.4 is the release that publishes it, so there is nothing to pull yet. |
-| **HotLoop Edge** | IoT plus the machine layer, Ignition Edge style: HMI, PLCs, CODESYS, Pi PLCs, store-and-forward, and an OPC UA server. SQLite, Postgres or TimescaleDB. | Built and merged, published alongside IoT in 4.18.4. Nothing to pull yet. |
+| **HotLoop IoT** | The automation base, written in Go for OT. Entities, automations, helpers, scripts, the logbook, dashboards, notifications, MCP, and MQTT with discovery for Shelly, ESPHome, Tasmota and Zigbee2MQTT, plus every industrial driver. SQLite or Postgres. | Built and merged. 4.18.5 publishes it, and there is nothing to pull yet. |
+| **HotLoop Edge** | IoT plus the machine layer, Ignition Edge style: HMI, PLCs, CODESYS, Pi PLCs, store-and-forward, and an OPC UA server. SQLite, Postgres or TimescaleDB. | Built and merged. 4.18.5 publishes it alongside IoT, and there is nothing to pull yet. |
 | **HotLoop Gateway** | Everything, plus fleet, multi-site and scheduled reports. The site brain. | **4.17.0 is out.** [Install it](https://docs.hotloop.io/gateway/install/). |
 | **HotLoop Edge Relay** | Headless. Polls, forwards over Sparkplug B, buffers to disk when the link dies. No database, no UI, nothing to click wrong. | **4.17.0 is out.** [Install it](https://docs.hotloop.io/edge-relay/install/). |
 | **HotLoop Flow** | Node-RED's idea on a runtime that doesn't fall over. One static Go binary, reads your `flows.json` as is, every inbox bounded so one chatty sensor can't OOM-kill the pod, and it won't start without a login. It was Emberwire 0.1.0 before it got the name. | **2.2.0 is out**, at [HotLoop-io/hotloop-flow](https://github.com/HotLoop-io/hotloop-flow). [Install it](https://docs.hotloop.io/flow/install/). |
@@ -94,7 +94,7 @@ That sits on 4.16.0's foundation: entities, so the plant has names instead of re
 
 **HotLoop Cascade 0.1.1 is out**, and it's the first Cascade release. There was a 0.1.0 tag that never published anything, because its chart test failed on a hosted runner. 0.1.1 is the same code with the test fixed. Every step is checkpointed, so a `kill -9` in the middle of a run picks up where it left off. The repo and the registry are private, so a pull needs a `podman login ghcr.io` first. [The release notes](https://hotloop.io/releases/cascade/) have the commands.
 
-IoT and Edge are built and merged, and 4.18.4 is the release that publishes them. Follow [Discussions](https://github.com/orgs/HotLoop-io/discussions) if you want to know the second they ship.
+IoT and Edge are built and merged, 4.18.5 publishes them, and there is nothing to pull yet. Follow [Discussions](https://github.com/orgs/HotLoop-io/discussions) if you want to know the second they ship.
 
 ## What lives in this org
 
