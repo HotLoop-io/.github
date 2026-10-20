@@ -23,7 +23,7 @@ Open an issue on the relevant repo using the templates provided. Include enough 
 
 ## License note
 
-All six HotLoop products, IoT, Edge, the Gateway, the Edge Relay, Flow and Cascade, are under the [HotLoop Business Source License 1.1](https://hotloop.io/license/). It is source-available, not open source. Home and lab use is free, and so is use by schools, nonprofits and government bodies. Business use goes through [EmberNET](https://embernet.ai), where businesses sign up for free and business use is free. Support, SLAs and warranties come from our Official Systems Integrator, [Fireball Industries](https://fireballz.ai). Each version converts to GPL-3.0 or later four years after it is first made public. A contribution is accepted under the license of the repo it goes to.
+All six HotLoop products, IoT, Edge, the Gateway, the Edge Relay, Flow and Cascade, are under the [HotLoop Business Source License 1.1](https://hotloop.io/license/), Flow from 2.2.0 on, and earlier Flow releases keep the license they shipped with. It is source-available, not open source. Home and lab use is free, and so is use by schools, nonprofits and government bodies. Business use goes through [EmberNET](https://embernet.ai), where businesses sign up for free and business use is free. Support, SLAs and warranties come from our Official Systems Integrator, [Fireball Industries](https://fireballz.ai). Each version converts to GPL-3.0 or later four years after it is first made public. A contribution is accepted under the license of the repo it goes to.
 
 ## Code of Conduct
 
