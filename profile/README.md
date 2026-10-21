@@ -28,10 +28,10 @@ One codebase, shipped as four products, each with its own image and chart, all r
 
 | Product | What it is | Status |
 |---|---|---|
-| **HotLoop IoT** | The automation base, written in Go for OT. Entities, automations, helpers, scripts, the logbook, dashboards, notifications, MCP, and MQTT with discovery for Shelly, ESPHome, Tasmota and Zigbee2MQTT, plus every industrial driver. SQLite or Postgres. | Built and merged. 4.18.5 publishes it, and there is nothing to pull yet. |
-| **HotLoop Edge** | IoT plus the machine layer, Ignition Edge style: HMI, PLCs, CODESYS, Pi PLCs, store-and-forward, and an OPC UA server. SQLite, Postgres or TimescaleDB. | Built and merged. 4.18.5 publishes it alongside IoT, and there is nothing to pull yet. |
-| **HotLoop Gateway** | Everything, plus fleet, multi-site and scheduled reports. The site brain. | **4.17.0 is out.** [Install it](https://docs.hotloop.io/gateway/install/). |
-| **HotLoop Edge Relay** | Headless. Polls, forwards over Sparkplug B, buffers to disk when the link dies. No database, no UI, nothing to click wrong. | **4.17.0 is out.** [Install it](https://docs.hotloop.io/edge-relay/install/). |
+| **HotLoop IoT** | The automation base, written in Go for OT. Entities, automations, helpers, scripts, the logbook, dashboards, notifications, MCP, and MQTT with discovery for Shelly, ESPHome, Tasmota and Zigbee2MQTT, plus every industrial driver. SQLite or Postgres. | **4.18.10 is out.** [Install it](https://docs.hotloop.io/install/). |
+| **HotLoop Edge** | IoT plus the machine layer, Ignition Edge style: HMI, PLCs, CODESYS, Pi PLCs, store-and-forward, and an OPC UA server. SQLite, Postgres or TimescaleDB. | **4.18.10 is out.** [Install it](https://docs.hotloop.io/install/). |
+| **HotLoop Gateway** | Everything, plus fleet, multi-site and scheduled reports. The site brain. | **4.18.10 is out.** [Install it](https://docs.hotloop.io/gateway/install/). |
+| **HotLoop Edge Relay** | Headless. Polls, forwards over Sparkplug B, buffers to disk when the link dies. No database, no UI, nothing to click wrong. | **4.18.10 is out.** [Install it](https://docs.hotloop.io/edge-relay/install/). |
 | **HotLoop Flow** | Node-RED's idea on a runtime that doesn't fall over. One static Go binary, reads your `flows.json` as is, every inbox bounded so one chatty sensor can't OOM-kill the pod, and it won't start without a login. It was Emberwire 0.1.0 before it got the name. | **2.2.0 is out**, at [HotLoop-io/hotloop-flow](https://github.com/HotLoop-io/hotloop-flow). [Install it](https://docs.hotloop.io/flow/install/). |
 | **HotLoop Cascade** | The plant talking to everything else. An alarm, a webhook, a schedule or an MQTT burst becomes a batch of items that run through checkpointed steps against real systems, so a dead API or a rebooted box doesn't lose the job. One static Go binary, SQLite or Postgres. | **0.1.2 is out.** The image and chart are public and pull with no login. The source repo is private. [Docs](https://docs.hotloop.io/cascade/overview/). |
 
@@ -70,31 +70,38 @@ What that buys you: HotLoop stays genuinely free and genuinely capable for homes
 
 ## Where we are right now
 
-**HotLoop Gateway 4.17.0 is out.** The Edge Relay ships beside it as its own image and chart, same version, and both pull with no login:
+**HotLoop 4.18.10 is out, and for the first time it's four products.** IoT and Edge are brand new, and the Gateway and the Edge Relay ship beside them from the same tag, same version, each with its own image and its own chart. All four pull with no login:
 
 ```
-ghcr.io/hotloop-io/hotloop:4.17.0
-ghcr.io/hotloop-io/hotloop-edge-relay:4.17.0
+ghcr.io/hotloop-io/hotloop-iot:4.18.10
+ghcr.io/hotloop-io/hotloop-edge:4.18.10
+ghcr.io/hotloop-io/hotloop:4.18.10
+ghcr.io/hotloop-io/hotloop-edge-relay:4.18.10
 ```
 
-The charts are `hotloop` and `hotloop-edge-relay` from `https://hotloop.io/hotloop`, and the Edge Relay has a Quadlet unit for a box outside a cluster. On 4.16.0 it's a plain `helm upgrade`, with two catches: use `--reset-then-reuse-values`, not `--reuse-values`, and back up the new `<release>-secret-key` Secret, because the first start encrypts every stored device password with it and from then on that key is part of your data. On 4.3.1 it's not a plain upgrade at all. Either way, read [the upgrade](https://docs.hotloop.io/gateway/upgrading/) first or you'll be reading it at 2am anyway. The code lives in this org at `HotLoop-io/hotloop`, and that repo is private for now.
+The charts are `hotloop-iot`, `hotloop-edge`, `hotloop` and `hotloop-edge-relay`, all from one Helm repository: `helm repo add hotloop https://hotloop.io/hotloop/`. For a box outside a cluster, each product has Podman Quadlet units in the `hotloop` repo, and the [Quadlet install guide](https://docs.hotloop.io/install/quadlet/) walks through them. The Gateway kept its old image and chart names, so nobody running it changes a thing. On 4.17.0 the Gateway is a `helm upgrade`, with `--reset-then-reuse-values` and not `--reuse-values`, and a couple of defaults moved, so read [the upgrade](https://docs.hotloop.io/gateway/upgrading/) before you touch a running plant. The code lives in this org at `HotLoop-io/hotloop`, and that repo is private for now.
 
-What 4.17.0 gets you:
+Which one: IoT is the automation base for a Pi, a NUC or a box in a closet, and it's the smallest image. Edge goes next to a machine, adds the OPC UA server and Sparkplug publishing, and keeps running when the uplink dies. The Gateway is the site brain, with fleet, multi-site and scheduled reports. The Edge Relay polls and forwards and has no database and no UI. Every one of them speaks every protocol, so you never step up a product just to reach the PLC on your bench. A product is a build, not a setting: the OPC UA server isn't switched off in IoT, it isn't in the image.
 
-- **Recipes.** Grade A's setpoints off the laminated sheet and into the plant in one go, checked whole, refused whole, and read back from the device. Nobody fat-fingers the changeover at 2am again.
-- **Scripts.** Write the CIP cycle once, run it from a screen, a rule, MCP or its own entity.
-- **Blueprints.** Write a rule once with blanks and fill it in per pump. Editing the blueprint on Wednesday doesn't quietly change the rule that was right on Tuesday.
-- **Helpers, the logbook, and a real automation language**, so "the pump has been on for five minutes" is one trigger instead of a timer hack.
-- **UniFi, read-only.** Switches, ports, PoE, WAN and clients as tags, so a quiet PLC tells you which port it's on. Its very first real read called our own 5G backup up. It had been dead for two days, and the console's WAN block still said up, which is what HotLoop trusted. The console's health checks knew, so that's what it reads now, and a dead backup reads dead.
-- **Device passwords encrypted at rest**, with a key that never sits in the database or a backup.
+What 4.18.10 gets you:
 
-That sits on 4.16.0's foundation: entities, so the plant has names instead of register addresses, paging over ntfy, Gotify and Discord with an Acknowledge button that actually acks, and Ignition 8.3.9 reading our OPC UA server end to end.
+- **Four products, four images, four charts, one tag.** `hotloop-iot` and `hotloop-edge` are the new ones.
+- **MQTT discovery.** Point ESPHome, Zigbee2MQTT, Tasmota or a Shelly at the broker and it shows up, reading. It can't command anything until an admin accepts it and arms each point by hand.
+- **Historian targets.** Every reading HotLoop keeps also goes to the plant's own PostgreSQL, TimescaleDB, SQL Server, InfluxDB or MySQL/MariaDB, the same rows with the same quality.
+- **The database is a setting.** SQLite, PostgreSQL or TimescaleDB per product, from the same binary, so a Pi doesn't need a 300 MB database image.
+- **Edge keeps the plant running with the WAN dead,** and its store and forward queue survives a boot during an outage, a link that dies without a reset, and a replay that has to outrun the plant.
+- **Every box follows `:stable` and updates itself,** and a release that can't start is rolled back. Migrations only add, so that rollback is safe.
+- **UniFi on a wall board and a phone.** A network map that zooms, traces for WAN latency and port traffic, and UniFi events in the logbook under the switch they're about.
+- **The Edge Relay takes a pushed config live,** with no restart and no lost Sparkplug session.
+- **A license change.** All four products are under the Business Source License 1.1 now.
+
+It took ten tags to get here. 4.18.0 through 4.18.7 and 4.18.9 died in the Test job on real bugs, and a couple of them were bugs in the product that the CI box caught and my lab didn't. 4.18.8 passed Test and I cancelled it by mistake in the middle of publishing, so its four images got pushed as 4.18.8 and no chart and no release ever went out. 4.18.10 supersedes all of them. Migrations 0016 through 0024 run on the first start and migrations only add, but take a `pg_dump` first like always.
+
+What isn't proven yet, because I'm not going to round up: the IoT and Edge Quadlet units haven't been run under systemd except IoT's SQLite one, discovery has been proven against recordings of real devices and not a bench of them, and the 32-bit arm images haven't met a Pi 3 under load. The code is private for now, so [Discussions](https://github.com/orgs/HotLoop-io/discussions) is where questions go.
 
 **HotLoop Flow 2.2.0 is out**, at [HotLoop-io/hotloop-flow](https://github.com/HotLoop-io/hotloop-flow). Flow talks to the PLCs now (Modbus TCP, OPC UA, S7, EtherNet/IP and Sparkplug B), keeps its context across a restart, and shows you where a message went: click a debug message and the editor lights the path it took. It's also the first Flow under the BSL. 2.1.0 and everything before it keep the license they shipped with. [The release notes](https://hotloop.io/releases/flow/) have the rest.
 
 **HotLoop Cascade 0.1.2 is out.** 0.1.1 was the first Cascade release, and 0.1.2 is the same code built and tested on Podman only. There was a 0.1.0 tag before that, and it never published anything because its chart test failed on a hosted runner. Every step is checkpointed, so a `kill -9` in the middle of a run picks up where it left off. The source repo is private, but the image and the chart are public and pull with no login. [The release notes](https://hotloop.io/releases/cascade/) have the commands.
-
-IoT and Edge are built and merged, 4.18.5 publishes them, and there is nothing to pull yet. Follow [Discussions](https://github.com/orgs/HotLoop-io/discussions) if you want to know the second they ship.
 
 ## What lives in this org
 
