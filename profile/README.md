@@ -24,7 +24,9 @@ There's no dumbed-down home edition and no enterprise edition holding features h
 
 ## The lineup, Flow and Cascade
 
-One codebase, shipped as four products, each with its own image and chart, all released together from one tag. Every one of them speaks every protocol HotLoop has, MQTT included. Features split them, protocols don't, so nobody ever has to run the big one just to reach the PLC on their bench. Flow and Cascade are their own products beside them.
+HotLoop is six products for the plant floor: four that grow with a site (IoT, Edge, Gateway, Edge Relay), plus Flow for wiring and Cascade for workflows.
+
+They ship on three release lines. **HotLoop core** is IoT, Edge, Gateway and Edge Relay: one codebase, one version (4.18.10), each product with its own image and chart, all released together from one tag. **Flow** (2.2.0) and **Cascade** (0.1.2) are their own lines with their own versions. Every core product speaks every protocol HotLoop has, MQTT included. Features split them, protocols don't, so nobody ever has to run the big one just to reach the PLC on their bench.
 
 | Product | What it is | Status |
 |---|---|---|
