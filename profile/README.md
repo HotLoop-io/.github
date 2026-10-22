@@ -6,7 +6,7 @@
 
 **Automation loops for the real world.**
 
-[Website](https://hotloop.io) &nbsp;·&nbsp; [Docs](https://docs.hotloop.io) &nbsp;·&nbsp; [Discussions](https://github.com/orgs/HotLoop-io/discussions) &nbsp;·&nbsp; [Reddit](https://www.reddit.com/r/HotLoop/) &nbsp;·&nbsp; [License](https://hotloop.io/license/) &nbsp;·&nbsp; [Business use, via EmberNET](https://embernet.ai)
+[Website](https://hotloop.io) &nbsp;·&nbsp; [Docs](https://docs.hotloop.io) &nbsp;·&nbsp; [Discussions](https://github.com/orgs/HotLoop-io/discussions) &nbsp;·&nbsp; [Reddit](https://www.reddit.com/r/HotLoop/) &nbsp;·&nbsp; [License](https://hotloop.io/license/) &nbsp;·&nbsp; [Business use, via EmberNet](https://embernet.ai)
 
 </div>
 
@@ -22,16 +22,18 @@ Two things make it worth trusting. It won't lie to you: a sensor it can't read s
 
 There's no dumbed-down home edition and no enterprise edition holding features hostage. The garage and the plant floor run the same code. Who you are decides how you get it, not what it can do.
 
-## The lineup, Flow and Cascade
+## The lineup, Flow, and Cascade
 
-HotLoop is six products for the plant floor: four that grow with a site (IoT, Edge, Gateway, Edge Relay), plus Flow for wiring and Cascade for workflows.
+HotLoop is six products for the plant floor: four that grow with a site (IoT, Edge, Gateway, and Edge Relay), plus Flow for wiring and Cascade for workflows.
 
-They ship on three release lines. **HotLoop core** is IoT, Edge, Gateway and Edge Relay: one codebase, one version (4.18.10), each product with its own image and chart, all released together from one tag. **Flow** (2.2.0) and **Cascade** (0.1.2) are their own lines with their own versions. Every core product speaks every protocol HotLoop has, MQTT included. Features split them, protocols don't, so nobody ever has to run the big one just to reach the PLC on their bench.
+They ship on three release lines. **HotLoop core** is IoT, Edge, Gateway, and Edge Relay: one codebase, one version (4.18.10), each product with its own image and chart, all released together from one tag. **Flow** (2.2.0) and **Cascade** (0.1.2) are their own lines with their own versions. Every core product speaks every protocol HotLoop has, MQTT included. Features split them, protocols don't, so nobody ever has to run the big one just to reach the PLC on their bench.
+
+Release notes and roadmaps, per line: **HotLoop core** has [release notes](https://hotloop.io/releases/core/) and a [roadmap](https://docs.hotloop.io/roadmap/). **Flow** has [release notes](https://hotloop.io/releases/flow/) and a [roadmap](https://docs.hotloop.io/flow/roadmap/). **Cascade** has [release notes](https://hotloop.io/releases/cascade/) and a [roadmap](https://docs.hotloop.io/cascade/roadmap/).
 
 | Product | What it is | Status |
 |---|---|---|
-| **HotLoop IoT** | The automation base, written in Go for OT. Entities, automations, helpers, scripts, the logbook, dashboards, notifications, MCP, and MQTT with discovery for Shelly, ESPHome, Tasmota and Zigbee2MQTT, plus every industrial driver. SQLite or Postgres. | **4.18.10 is out.** [Install it](https://docs.hotloop.io/install/). |
-| **HotLoop Edge** | IoT plus the machine layer, Ignition Edge style: HMI, PLCs, CODESYS, Pi PLCs, store-and-forward, and an OPC UA server. SQLite, Postgres or TimescaleDB. | **4.18.10 is out.** [Install it](https://docs.hotloop.io/install/). |
+| **HotLoop IoT** | The automation base, written in Go for OT. Entities, automations, helpers, scripts, the logbook, dashboards, notifications, MCP, and MQTT with discovery for Shelly, ESPHome, Tasmota and Zigbee2MQTT, plus every industrial driver. SQLite or Postgres. | **4.18.10 is out.** [Install it](https://docs.hotloop.io/iot/install/). |
+| **HotLoop Edge** | IoT plus the machine layer, Ignition Edge style: HMI, PLCs, CODESYS, Pi PLCs, store-and-forward, and an OPC UA server. SQLite, Postgres or TimescaleDB. | **4.18.10 is out.** [Install it](https://docs.hotloop.io/edge/install/). |
 | **HotLoop Gateway** | Everything, plus fleet, multi-site and scheduled reports. The site brain. | **4.18.10 is out.** [Install it](https://docs.hotloop.io/gateway/install/). |
 | **HotLoop Edge Relay** | Headless. Polls, forwards over Sparkplug B, buffers to disk when the link dies. No database, no UI, nothing to click wrong. | **4.18.10 is out.** [Install it](https://docs.hotloop.io/edge-relay/install/). |
 | **HotLoop Flow** | Node-RED's idea on a runtime that doesn't fall over. One static Go binary, reads your `flows.json` as is, every inbox bounded so one chatty sensor can't OOM-kill the pod, and it won't start without a login. It was Emberwire 0.1.0 before it got the name. | **2.2.0 is out**, at [HotLoop-io/hotloop-flow](https://github.com/HotLoop-io/hotloop-flow). [Install it](https://docs.hotloop.io/flow/install/). |
@@ -41,13 +43,13 @@ All six are under the [HotLoop Business Source License 1.1](https://hotloop.io/l
 
 ## Who gets what for free
 
-**Home or lab? It's free, whichever one you use.** Your house, your garage, a bench, a class you teach, or because you felt like tinkering at 1am. No trial, no countdown, no upgrade popup six months in. Schools, nonprofits and government bodies are free too, for their own operations and mission, with no sign-up.
+**Home or lab? It's free, whichever one you use.** Your house, your garage, a bench, a class you teach, or because you felt like tinkering at 1am. No trial, no countdown, no upgrade popup six months in. Schools, nonprofits, and government bodies are free too, for their own operations and mission, with no sign-up.
 
-**Running a business? That goes through [EmberNET](https://embernet.ai).** Internal only, customer-facing, making you money or saving you money, it's business use all the same. Signing up for EmberNET is free, and business use of HotLoop there is free. If you want support, SLAs and a warranty, meaning a vendor who picks up the phone instead of a GitHub issue rotting for six months, that's our Official Systems Integrator, [Fireball Industries](https://fireballz.ai).
+**Running a business? That goes through [EmberNet](https://embernet.ai).** Internal only, customer-facing, making you money or saving you money, it's business use all the same. Signing up for EmberNet is free, and business use of HotLoop there is free. If you want support, SLAs, and a warranty, meaning a vendor who picks up the phone instead of a GitHub issue rotting for six months, that's our Official Systems Integrator, [Fireball Industries](https://fireballz.ai).
 
 "Business use" gets fuzzy real fast once somebody starts talking themselves into it, so here's where the line sits:
 
-| Situation | Free | Business, through EmberNET |
+| Situation | Free | Business, through EmberNet |
 |---|:---:|:---:|
 | Automating your own house | Yes | |
 | A hobby project you're building for fun | Yes | |
@@ -60,19 +62,19 @@ All six are under the [HotLoop Business Source License 1.1](https://hotloop.io/l
 
 What the license does not grant: hosting it as a service for other people, reselling it, and embedding it in something you sell. Each version also turns into GPL-3.0 or later four years after it is first made public, so nothing here stays locked forever.
 
-Not sure which side you're on? Ask before you build a whole setup on a bad guess. Email support@hotloop.io, or go straight to EmberNET if it smells like a business case. The answer costs you nothing.
+Not sure which side you're on? Ask before you build a whole setup on a bad guess. Email support@hotloop.io, or go straight to EmberNet if it smells like a business case. The answer costs you nothing.
 
 The [license](https://hotloop.io/license/) is the legal document, and it wins every argument, including this one. The [terms](https://hotloop.io/terms/) cover the rest. Everything above is us explaining them like people instead of lawyers.
 
 ## Why partners, instead of charging for it ourselves
 
-Building good software and running enterprise support contracts are two different jobs, and a team that pretends to do both ends up mediocre at both. EmberNET is where business use of HotLoop happens. Fireball Industries handles support, SLAs and warranties, the stuff a real company needs before it trusts anything in production. We build the product.
+Building good software and running enterprise support contracts are two different jobs, and a team that pretends to do both ends up mediocre at both. EmberNet is where business use of HotLoop happens. Fireball Industries handles support, SLAs, and warranties, the stuff a real company needs before it trusts anything in production. We build the product.
 
-What that buys you: HotLoop stays genuinely free and genuinely capable for homes, labs, schools, nonprofits and government, instead of everything getting slowly steered toward a paid tier. There's no paid tier to steer toward.
+What that buys you: HotLoop stays genuinely free and genuinely capable for homes, labs, schools, nonprofits, and government, instead of everything getting slowly steered toward a paid tier. There's no paid tier to steer toward.
 
 ## Where we are right now
 
-**HotLoop 4.18.10 is out, and for the first time it's four products.** IoT and Edge are brand new, and the Gateway and the Edge Relay ship beside them from the same tag, same version, each with its own image and its own chart. All four pull with no login:
+**HotLoop core 4.18.10 is out, and for the first time it's four products.** IoT and Edge are brand new, and the Gateway and the Edge Relay ship beside them from the same tag, same version, each with its own image and its own chart. All four pull with no login:
 
 ```
 ghcr.io/hotloop-io/hotloop-iot:4.18.10
@@ -81,27 +83,38 @@ ghcr.io/hotloop-io/hotloop:4.18.10
 ghcr.io/hotloop-io/hotloop-edge-relay:4.18.10
 ```
 
-The charts are `hotloop-iot`, `hotloop-edge`, `hotloop` and `hotloop-edge-relay`, all from one Helm repository: `helm repo add hotloop https://hotloop.io/hotloop/`. For a box outside a cluster, each product has Podman Quadlet units in the `hotloop` repo, and the [Quadlet install guide](https://docs.hotloop.io/install/quadlet/) walks through them. The Gateway kept its old image and chart names, so nobody running it changes a thing. On 4.17.0 the Gateway is a `helm upgrade`, with `--reset-then-reuse-values` and not `--reuse-values`, and a couple of defaults moved, so read [the upgrade](https://docs.hotloop.io/gateway/upgrading/) before you touch a running plant. The code lives in this org at `HotLoop-io/hotloop`, and that repo is private for now.
+The charts are `hotloop-iot`, `hotloop-edge`, `hotloop`, and `hotloop-edge-relay`, all from one Helm repository: `helm repo add hotloop https://hotloop.io/hotloop/`. For a box outside a cluster, each product has Podman Quadlet units in the `hotloop` repo, and the [Quadlet install guide](https://docs.hotloop.io/install/quadlet/) walks through them. The Gateway kept its old image and chart names, so nobody running it changes a thing. On 4.17.0 the Gateway is a `helm upgrade`, with `--reset-then-reuse-values` and not `--reuse-values`, and a couple of defaults moved, so read [the upgrade](https://docs.hotloop.io/gateway/upgrading/) before you touch a running plant. The code lives in this org at `HotLoop-io/hotloop`, and that repo is private for now.
 
-Which one: IoT is the automation base for a Pi, a NUC or a box in a closet, and it's the smallest image. Edge goes next to a machine, adds the OPC UA server and Sparkplug publishing, and keeps running when the uplink dies. The Gateway is the site brain, with fleet, multi-site and scheduled reports. The Edge Relay polls and forwards and has no database and no UI. Every one of them speaks every protocol, so you never step up a product just to reach the PLC on your bench. A product is a build, not a setting: the OPC UA server isn't switched off in IoT, it isn't in the image.
+Which one: IoT is the automation base for a Pi, a NUC, or a box in a closet, and it's the smallest image. Edge goes next to a machine, adds the OPC UA server and Sparkplug publishing, and keeps running when the uplink dies. The Gateway is the site brain, with fleet, multi-site, and scheduled reports. The Edge Relay polls and forwards and has no database and no UI. Every one of them speaks every protocol, so you never step up a product just to reach the PLC on your bench. A product is a build, not a setting: the OPC UA server isn't switched off in IoT, it isn't in the image.
 
 What 4.18.10 gets you:
 
 - **Four products, four images, four charts, one tag.** `hotloop-iot` and `hotloop-edge` are the new ones.
-- **MQTT discovery.** Point ESPHome, Zigbee2MQTT, Tasmota or a Shelly at the broker and it shows up, reading. It can't command anything until an admin accepts it and arms each point by hand.
-- **Historian targets.** Every reading HotLoop keeps also goes to the plant's own PostgreSQL, TimescaleDB, SQL Server, InfluxDB or MySQL/MariaDB, the same rows with the same quality.
-- **The database is a setting.** SQLite, PostgreSQL or TimescaleDB per product, from the same binary, so a Pi doesn't need a 300 MB database image.
+- **MQTT discovery.** Point ESPHome, Zigbee2MQTT, Tasmota, or a Shelly at the broker and it shows up, reading. It can't command anything until an admin accepts it and arms each point by hand.
+- **Historian targets.** Every reading HotLoop keeps also goes to the plant's own PostgreSQL, TimescaleDB, SQL Server, InfluxDB, or MySQL/MariaDB, the same rows with the same quality.
+- **The database is a setting.** SQLite, PostgreSQL, or TimescaleDB per product, from the same binary, so a Pi doesn't need a 300 MB database image.
 - **Edge keeps the plant running with the WAN dead,** and its store and forward queue survives a boot during an outage, a link that dies without a reset, and a replay that has to outrun the plant.
 - **Every box follows `:stable` and updates itself,** and a release that can't start is rolled back. Migrations only add, so that rollback is safe.
 - **UniFi on a wall board and a phone.** A network map that zooms, traces for WAN latency and port traffic, and UniFi events in the logbook under the switch they're about.
 - **The Edge Relay takes a pushed config live,** with no restart and no lost Sparkplug session.
 - **A license change.** All four products are under the Business Source License 1.1 now.
 
+Everything that came in 4.17.0 is still in there:
+
+- **Recipes.** Grade A's setpoints off the laminated sheet and into the plant in one go, checked whole, refused whole, and read back from the device. Nobody fat-fingers the changeover at 2am again.
+- **Scripts.** Write the CIP cycle once, run it from a screen, a rule, MCP, or its own entity.
+- **Blueprints.** Write a rule once with blanks and fill it in per pump. Editing the blueprint on Wednesday doesn't quietly change the rule that was right on Tuesday.
+- **Helpers, the logbook, and a real automation language**, so "the pump has been on for five minutes" is one trigger instead of a timer hack.
+- **UniFi, read-only.** Switches, ports, PoE, WAN, and clients as tags, so a quiet PLC tells you which port it's on. Its very first real read called our own 5G backup up. It had been dead for two days, and the console's WAN block still said up, which is what HotLoop trusted. The console's health checks knew, so that's what it reads now, and a dead backup reads dead.
+- **Device passwords encrypted at rest**, with a key that never sits in the database or a backup.
+
+That sits on 4.16.0's foundation: entities, so the plant has names instead of register addresses, paging over ntfy, Gotify, and Discord with an Acknowledge button that actually acks, and Ignition 8.3.9 reading our OPC UA server end to end.
+
 It took ten tags to get here. 4.18.0 through 4.18.7 and 4.18.9 died in the Test job on real bugs, and a couple of them were bugs in the product that the CI box caught and my lab didn't. 4.18.8 passed Test and I cancelled it by mistake in the middle of publishing, so its four images got pushed as 4.18.8 and no chart and no release ever went out. 4.18.10 supersedes all of them. Migrations 0016 through 0024 run on the first start and migrations only add, but take a `pg_dump` first like always.
 
 What isn't proven yet, because I'm not going to round up: the IoT and Edge Quadlet units haven't been run under systemd except IoT's SQLite one, discovery has been proven against recordings of real devices and not a bench of them, and the 32-bit arm images haven't met a Pi 3 under load. The code is private for now, so [Discussions](https://github.com/orgs/HotLoop-io/discussions) is where questions go.
 
-**HotLoop Flow 2.2.0 is out**, at [HotLoop-io/hotloop-flow](https://github.com/HotLoop-io/hotloop-flow). Flow talks to the PLCs now (Modbus TCP, OPC UA, S7, EtherNet/IP and Sparkplug B), keeps its context across a restart, and shows you where a message went: click a debug message and the editor lights the path it took. It's also the first Flow under the BSL. 2.1.0 and everything before it keep the license they shipped with. [The release notes](https://hotloop.io/releases/flow/) have the rest.
+**HotLoop Flow 2.2.0 is out**, at [HotLoop-io/hotloop-flow](https://github.com/HotLoop-io/hotloop-flow). Flow talks to the PLCs now (Modbus TCP, OPC UA, S7, EtherNet/IP, and Sparkplug B), keeps its context across a restart, and shows you where a message went: click a debug message and the editor lights the path it took. It's also the first Flow under the BSL. 2.1.0 and everything before it keep the license they shipped with. [The release notes](https://hotloop.io/releases/flow/) have the rest.
 
 **HotLoop Cascade 0.1.2 is out.** 0.1.1 was the first Cascade release, and 0.1.2 is the same code built and tested on Podman only. There was a 0.1.0 tag before that, and it never published anything because its chart test failed on a hosted runner. Every step is checkpointed, so a `kill -9` in the middle of a run picks up where it left off. The source repo is private, but the image and the chart are public and pull with no login. [The release notes](https://hotloop.io/releases/cascade/) have the commands.
 
@@ -109,7 +122,7 @@ What isn't proven yet, because I'm not going to round up: the IoT and Edge Quadl
 
 | Repo | What it's for |
 |---|---|
-| `hotloop` | The lineup: IoT, Edge, Gateway and Edge Relay, one codebase. Private for now, so a link would just 404 on you |
+| `hotloop` | The lineup: IoT, Edge, Gateway, and Edge Relay, one codebase. Private for now, so a link would just 404 on you |
 | `hotloop-cascade` | HotLoop Cascade. Private for now, so a link would just 404 on you |
 | [`hotloop-flow`](https://github.com/HotLoop-io/hotloop-flow) | HotLoop Flow |
 | [`HotLoop-io`](https://github.com/HotLoop-io/HotLoop-io) | The HotLoop Business Source License, the brand standard, and the legal home |
@@ -130,7 +143,7 @@ That last one trips people up, so: Discussions is a GitHub feature that lives at
 
 ## Contributing
 
-[CONTRIBUTING.md](./CONTRIBUTING.md) covers how to get a change in properly. Flow, the website and the docs take pull requests right now. The lineup's repo and Cascade's are private for now, so a bug or an idea for either goes in Discussions, where we'll actually see it.
+[CONTRIBUTING.md](./CONTRIBUTING.md) covers how to get a change in properly. Flow, the website, and the docs take pull requests right now. The lineup's repo and Cascade's are private for now, so a bug or an idea for either goes in Discussions, where we'll actually see it.
 
 ## Code of Conduct
 
