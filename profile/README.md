@@ -26,17 +26,17 @@ There's no dumbed-down home edition and no enterprise edition holding features h
 
 HotLoop is six products for the plant floor: four that grow with a site (IoT, Edge, Gateway, and Edge Relay), plus Flow for wiring and Cascade for workflows.
 
-They ship on three release lines. **HotLoop core** is IoT, Edge, Gateway, and Edge Relay: one codebase, one version (4.18.10), each product with its own image and chart, all released together from one tag. **Flow** (2.2.0) and **Cascade** (0.1.2) are their own lines with their own versions. Every core product speaks every protocol HotLoop has, MQTT included. Features split them, protocols don't, so nobody ever has to run the big one just to reach the PLC on their bench.
+They ship on three release lines. **HotLoop core** is IoT, Edge, Gateway, and Edge Relay: one codebase, one version (4.18.11), each product with its own image and chart, all released together from one tag. **Flow** (2.5.0) and **Cascade** (0.1.2) are their own lines with their own versions. Every core product speaks every protocol HotLoop has, MQTT included. Features split them, protocols don't, so nobody ever has to run the big one just to reach the PLC on their bench.
 
 Release notes and roadmaps, per line: **HotLoop core** has [release notes](https://hotloop.io/releases/core/) and a [roadmap](https://docs.hotloop.io/roadmap/). **Flow** has [release notes](https://hotloop.io/releases/flow/) and a [roadmap](https://docs.hotloop.io/flow/roadmap/). **Cascade** has [release notes](https://hotloop.io/releases/cascade/) and a [roadmap](https://docs.hotloop.io/cascade/roadmap/).
 
 | Product | What it is | Status |
 |---|---|---|
-| **HotLoop IoT** | The automation base, written in Go for OT. Entities, automations, helpers, scripts, the logbook, dashboards, notifications, MCP, and MQTT with discovery for Shelly, ESPHome, Tasmota and Zigbee2MQTT, plus every industrial driver. SQLite or Postgres. | **4.18.10 is out.** [Install it](https://docs.hotloop.io/iot/install/). |
-| **HotLoop Edge** | IoT plus the machine layer, Ignition Edge style: HMI, PLCs, CODESYS, Pi PLCs, store-and-forward, and an OPC UA server. SQLite, Postgres or TimescaleDB. | **4.18.10 is out.** [Install it](https://docs.hotloop.io/edge/install/). |
-| **HotLoop Gateway** | Everything, plus fleet, multi-site and scheduled reports. The site brain. | **4.18.10 is out.** [Install it](https://docs.hotloop.io/gateway/install/). |
-| **HotLoop Edge Relay** | Headless. Polls, forwards over Sparkplug B, buffers to disk when the link dies. No database, no UI, nothing to click wrong. | **4.18.10 is out.** [Install it](https://docs.hotloop.io/edge-relay/install/). |
-| **HotLoop Flow** | Node-RED's idea on a runtime that doesn't fall over. One static Go binary, reads your `flows.json` as is, every inbox bounded so one chatty sensor can't OOM-kill the pod, and it won't start without a login. It was Emberwire 0.1.0 before it got the name. | **2.2.0 is out**, at [HotLoop-io/hotloop-flow](https://github.com/HotLoop-io/hotloop-flow). [Install it](https://docs.hotloop.io/flow/install/). |
+| **HotLoop IoT** | The automation base, written in Go for OT. Entities, automations, helpers, scripts, the logbook, dashboards, notifications, MCP, and MQTT with discovery for Shelly, ESPHome, Tasmota and Zigbee2MQTT, plus every industrial driver. SQLite or Postgres. | **4.18.11 is out.** [Install it](https://docs.hotloop.io/iot/install/). |
+| **HotLoop Edge** | IoT plus the machine layer, Ignition Edge style: HMI, PLCs, CODESYS, Pi PLCs, store-and-forward, and an OPC UA server. SQLite, Postgres or TimescaleDB. | **4.18.11 is out.** [Install it](https://docs.hotloop.io/edge/install/). |
+| **HotLoop Gateway** | Everything, plus fleet, multi-site and scheduled reports. The site brain. | **4.18.11 is out.** [Install it](https://docs.hotloop.io/gateway/install/). |
+| **HotLoop Edge Relay** | Headless. Polls, forwards over Sparkplug B, buffers to disk when the link dies. No database, no UI, nothing to click wrong. | **4.18.11 is out.** [Install it](https://docs.hotloop.io/edge-relay/install/). |
+| **HotLoop Flow** | Node-RED's idea on a runtime that doesn't fall over. One static Go binary, reads your `flows.json` as is, every inbox bounded so one chatty sensor can't OOM-kill the pod, and it won't start without a login. It was Emberwire 0.1.0 before it got the name. | **2.5.0 is out**, at [HotLoop-io/hotloop-flow](https://github.com/HotLoop-io/hotloop-flow). [Install it](https://docs.hotloop.io/flow/install/). |
 | **HotLoop Cascade** | The plant talking to everything else. An alarm, a webhook, a schedule or an MQTT burst becomes a batch of items that run through checkpointed steps against real systems, so a dead API or a rebooted box doesn't lose the job. One static Go binary, SQLite or Postgres. | **0.1.2 is out.** The image and chart are public and pull with no login. The source repo is private. [Docs](https://docs.hotloop.io/cascade/overview/). |
 
 All six are under the [HotLoop Business Source License 1.1](https://hotloop.io/license/), Flow from 2.2.0 on. It is source-available, not open source, and I'm not going to dress it up as anything else. No license keys, nothing unlocks at runtime, and no date on a release that hasn't shipped, because a date we miss is worse than none. [hotloop.io/products](https://hotloop.io/products/) has them side by side.
@@ -74,20 +74,26 @@ What that buys you: HotLoop stays genuinely free and genuinely capable for homes
 
 ## Where we are right now
 
-**HotLoop core 4.18.10 is out, and for the first time it's four products.** IoT and Edge are brand new, and the Gateway and the Edge Relay ship beside them from the same tag, same version, each with its own image and its own chart. All four pull with no login:
+**HotLoop core 4.18.11 is out.** The database is PostgreSQL 17 now, and a box with PostgreSQL 16 data moves itself on its next upgrade, so read [Upgrading from 4.18.10](https://docs.hotloop.io/gateway/upgrading/#upgrading-from-41810) before you touch a running plant: it needs free disk, it takes as long as a copy of your data, and `helm rollback` to 4.18.10 will not start its database. **Since 4.18.10 it's four products,** IoT and Edge came in then, and the Gateway and the Edge Relay ship beside them from the same tag. IoT and Edge are brand new, and the Gateway and the Edge Relay ship beside them from the same tag, same version, each with its own image and its own chart. All four pull with no login:
 
 ```
-ghcr.io/hotloop-io/hotloop-iot:4.18.10
-ghcr.io/hotloop-io/hotloop-edge:4.18.10
-ghcr.io/hotloop-io/hotloop:4.18.10
-ghcr.io/hotloop-io/hotloop-edge-relay:4.18.10
+ghcr.io/hotloop-io/hotloop-iot:4.18.11
+ghcr.io/hotloop-io/hotloop-edge:4.18.11
+ghcr.io/hotloop-io/hotloop:4.18.11
+ghcr.io/hotloop-io/hotloop-edge-relay:4.18.11
 ```
 
 The charts are `hotloop-iot`, `hotloop-edge`, `hotloop`, and `hotloop-edge-relay`, all from one Helm repository: `helm repo add hotloop https://hotloop.io/hotloop/`. For a box outside a cluster, each product has Podman Quadlet units in the `hotloop` repo, and the [Quadlet install guide](https://docs.hotloop.io/install/quadlet/) walks through them. The Gateway kept its old image and chart names, so nobody running it changes a thing. On 4.17.0 the Gateway is a `helm upgrade`, with `--reset-then-reuse-values` and not `--reuse-values`, and a couple of defaults moved, so read [the upgrade](https://docs.hotloop.io/gateway/upgrading/) before you touch a running plant. The code lives in this org at `HotLoop-io/hotloop`, and that repo is private for now.
 
 Which one: IoT is the automation base for a Pi, a NUC, or a box in a closet, and it's the smallest image. Edge goes next to a machine, adds the OPC UA server and Sparkplug publishing, and keeps running when the uplink dies. The Gateway is the site brain, with fleet, multi-site, and scheduled reports. The Edge Relay polls and forwards and has no database and no UI. Every one of them speaks every protocol, so you never step up a product just to reach the PLC on your bench. A product is a build, not a setting: the OPC UA server isn't switched off in IoT, it isn't in the image.
 
-What 4.18.10 gets you:
+What 4.18.11 adds, and what 4.18.10 got you:
+
+- **PostgreSQL 17, with the upgrade built in.** A script copies the old data across with `pg_upgrade` before the database starts, proves the new server opens it, and only then swaps the names. The old directory stays as `pgdata.pg16`, your way back, and yours to delete.
+- **SNMP and BACnet/IP, read-only,** through one flow for pointing HotLoop at a device you know the address of. It never sends a SET or writes a BACnet property. Proven in the lab, not on a physical switch or controller yet.
+- **Kiosk sign-in, alarm escalation, and a UI that installs on a phone.** A panel asks for a PIN or a badge so the audit trail says who opened the valve. An alarm nobody acknowledges goes to the next person. And ten wrong passwords in a row now lock that account for five minutes on every install.
+
+And from 4.18.10:
 
 - **Four products, four images, four charts, one tag.** `hotloop-iot` and `hotloop-edge` are the new ones.
 - **MQTT discovery.** Point ESPHome, Zigbee2MQTT, Tasmota, or a Shelly at the broker and it shows up, reading. It can't command anything until an admin accepts it and arms each point by hand.
@@ -114,7 +120,7 @@ It took ten tags to get here. 4.18.0 through 4.18.7 and 4.18.9 died in the Test 
 
 What isn't proven yet, because I'm not going to round up: the IoT and Edge Quadlet units haven't been run under systemd except IoT's SQLite one, discovery has been proven against recordings of real devices and not a bench of them, and the 32-bit arm images haven't met a Pi 3 under load. The code is private for now, so [Discussions](https://github.com/orgs/HotLoop-io/discussions) is where questions go.
 
-**HotLoop Flow 2.2.0 is out**, at [HotLoop-io/hotloop-flow](https://github.com/HotLoop-io/hotloop-flow). Flow talks to the PLCs now (Modbus TCP, OPC UA, S7, EtherNet/IP, and Sparkplug B), keeps its context across a restart, and shows you where a message went: click a debug message and the editor lights the path it took. It's also the first Flow under the BSL. 2.1.0 and everything before it keep the license they shipped with. [The release notes](https://hotloop.io/releases/flow/) have the rest.
+**HotLoop Flow 2.5.0 is out**, at [HotLoop-io/hotloop-flow](https://github.com/HotLoop-io/hotloop-flow). Flow talks to the PLCs now (Modbus TCP, OPC UA, S7, EtherNet/IP, and Sparkplug B), keeps its context across a restart, and shows you where a message went: click a debug message and the editor lights the path it took. It's the first Flow under the BSL as of 2.2.0, and 2.1.0 and everything before it keep the license they shipped with. Since then it can read and write through HotLoop's write gate, an agent can call a flow as a tool over MCP, plugins are signed WebAssembly files, the EmberCORE dashboard can sign people in, and 2.5.0 is a new editor that looks like the rest of HotLoop. [The release notes](https://hotloop.io/releases/flow/) have the rest.
 
 **HotLoop Cascade 0.1.2 is out.** 0.1.1 was the first Cascade release, and 0.1.2 is the same code built and tested on Podman only. There was a 0.1.0 tag before that, and it never published anything because its chart test failed on a hosted runner. Every step is checkpointed, so a `kill -9` in the middle of a run picks up where it left off. The source repo is private, but the image and the chart are public and pull with no login. [The release notes](https://hotloop.io/releases/cascade/) have the commands.
 
