@@ -41,13 +41,13 @@ Release notes and roadmaps, per line: **HotLoop core** has [release notes](https
 | **HotLoop for CODESYS** | HotLoop beside a CODESYS runtime, as the operator screen, the alarms, and a second set of eyes on the PLC, set up by itself from a profile. It reads the runtime's variables by the names the programmer gave them, and it writes nothing to the PLC. | **Chart 0.3.1 is out**, wrapping HotLoop 4.19.4. It installs from the EmberCORE App Store, which lists it for EmberNet staff, or with Helm on k3s. Not run yet from the real Store page or on a physical controller. [Install it](https://docs.hotloop.io/codesys/install/). |
 | **HotLoop Transmitter** | A library for the CODESYS IDE that publishes a PLC's values as OPC UA PubSub over UDP, written in Structured Text. HotLoop core's UADP subscriber reads it. | **1.1.0 is out.** Every message carries the PLC's clock now, and it installs through the CODESYS Installer from a `.package`. [Install it](https://docs.hotloop.io/transmitter/install/). |
 
-All eight are under the [HotLoop Business Source License 1.1](https://hotloop.io/license/), Flow from 2.2.0 on. It is source-available, not open source, and I'm not going to dress it up as anything else. No license keys, nothing unlocks at runtime, and no date on a release that hasn't shipped, because a date we miss is worse than none. [hotloop.io/products](https://hotloop.io/products/) has them side by side.
+All eight are under the [HotLoop EmberNet Source License 1.0](https://hotloop.io/license/). It is source-available, not open source, and I'm not going to dress it up as anything else. No license keys, nothing unlocks at runtime, and no date on a release that hasn't shipped, because a date we miss is worse than none. [hotloop.io/products](https://hotloop.io/products/) has them side by side.
 
 ## Who gets what for free
 
 **Home or lab? It's free, whichever one you use.** Your house, your garage, a bench, a class you teach, or because you felt like tinkering at 1am. No trial, no countdown, no upgrade popup six months in. Schools, nonprofits, and government bodies are free too, for their own operations and mission, with no sign-up.
 
-**Running a business? That goes through [EmberNet](https://embernet.ai).** Internal only, customer-facing, making you money or saving you money, it's business use all the same. Signing up for EmberNet is free, and business use of HotLoop there is free. If you want support, SLAs, and a warranty, meaning a vendor who picks up the phone instead of a GitHub issue rotting for six months, that's our Official Systems Integrator, [Fireball Industries](https://fireballz.ai).
+**Running a business? That goes through [EmberNet](https://embernet.ai).** Internal only, customer-facing, making you money or saving you money, it's business use all the same. Signing up for EmberNet is free, and business use of HotLoop there is unrestricted. If you want support, SLAs, and a warranty, meaning a vendor who picks up the phone instead of a GitHub issue rotting for six months, that's our Official Systems Integrator, [Fireball Industries](https://fireballz.ai).
 
 "Business use" gets fuzzy real fast once somebody starts talking themselves into it, so here's where the line sits:
 
@@ -62,7 +62,7 @@ All eight are under the [HotLoop Business Source License 1.1](https://hotloop.io
 | A landlord automating a rental property they operate as a business | | Yes |
 | A contractor installing and managing it for paying clients | | Yes |
 
-What the license does not grant: hosting it as a service for other people, reselling it, and embedding it in something you sell. Each version also turns into GPL-3.0 or later four years after it is first made public, so nothing here stays locked forever.
+Outside EmberNet, the license does not grant hosting it as a service for other people, reselling it, or embedding it in something you sell, and any other use needs a commercial license from sales@fireballz.ai. Each version also becomes available under AGPL-3.0 or later four years after it is first made public, so nothing here stays locked forever.
 
 Not sure which side you're on? Ask before you build a whole setup on a bad guess. Email support@hotloop.io, or go straight to EmberNet if it smells like a business case. The answer costs you nothing.
 
@@ -114,7 +114,7 @@ And from 4.18.10:
 - **Every box follows `:stable` and updates itself,** and a release that can't start is rolled back. Migrations only add, so that rollback is safe.
 - **UniFi on a wall board and a phone.** A network map that zooms, traces for WAN latency and port traffic, and UniFi events in the logbook under the switch they're about.
 - **The Edge Relay takes a pushed config live,** with no restart and no lost Sparkplug session.
-- **A license change.** All four products are under the Business Source License 1.1 now.
+- **A license change.** 4.18.10 moved all four products to the Business Source License 1.1, and they have since moved again, to the EmberNet Source License 1.0.
 
 Everything that came in 4.17.0 is still in there:
 
@@ -148,7 +148,7 @@ What isn't proven yet, because I'm not going to round up: the IoT and Edge Quadl
 | [`hotloop-flow`](https://github.com/HotLoop-io/hotloop-flow) | HotLoop Flow |
 | `hotloop-codesys` | HotLoop for CODESYS. Private for now, so a link would just 404 on you |
 | `hotloop-transmitter` | HotLoop Transmitter. Private for now, so a link would just 404 on you |
-| [`HotLoop-io`](https://github.com/HotLoop-io/HotLoop-io) | The HotLoop Business Source License, the brand standard, and the legal home |
+| [`HotLoop-io`](https://github.com/HotLoop-io/HotLoop-io) | The EmberNet Source License, the brand standard, and the legal home |
 | [`docs`](https://github.com/HotLoop-io/docs) | Source for [docs.hotloop.io](https://docs.hotloop.io) |
 | [`HotLoop-io.github.io`](https://github.com/HotLoop-io/HotLoop-io.github.io) | Source for [hotloop.io](https://hotloop.io) |
 | [`.github`](https://github.com/HotLoop-io/.github) | Org wide community health files and this homepage |
